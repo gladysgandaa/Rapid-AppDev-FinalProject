@@ -3,6 +3,7 @@ class ArticlesController < ApplicationController
     def index
         @articles = Article.all
         @users = User.all
+        @topics = Article.distinct.pluck(:topic)
       end
 
     def show

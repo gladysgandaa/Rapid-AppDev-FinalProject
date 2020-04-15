@@ -28,6 +28,7 @@
     </div>
 
     <div class="right-page">
+
         <div class="recent-members">
             <h2 class="small-header">Recent Members</h2>
             <% @users.each do |user| %>
@@ -43,14 +44,21 @@
         </div>
         <div class="topics">
             <h2 class="small-header">Topics</h2>
-
+            <% @topics.each do |topic| %>            
+                <span class="subtext"><%= topic %></span>
+            <% end %>
         </div>
         <div class="post">
             <h2 class="small-header">Post</h2>
+            Most viewed posts
 
         </div>
         <div class="links">
             <h2 class="small-header">Links</h2>
+            <p> <a href="http://www.rubyonrails.org"> Ruby </a> </p>
+            <p> <a href="http://www.rmit.edu.au"> RMIT </a> </p>
+            
+            
 
         </div>
     </div>
