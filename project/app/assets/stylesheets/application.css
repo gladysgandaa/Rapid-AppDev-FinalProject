@@ -13,3 +13,55 @@
  *= require_tree .
  *= require_self
  */
+
+.article_form {
+    width: 80%;
+    margin: auto;
+
+}
+
+.article_form input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+  }
+
+.article_form input[type=text]:focus {
+border: 3px solid #555;
+}
+
+.article_form textarea {
+    width: 100%;
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    resize: none;
+  }
+
+.article_form select {
+width: 100%;
+padding: 16px 20px;
+border: none;
+border-radius: 4px;
+background-color: #f1f1f1;
+}
+
+.article_form input[type=button], input[type=submit], input[type=reset] {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+
+  .article_form{
+      font: 15px Arial, sans-serif;
+  }

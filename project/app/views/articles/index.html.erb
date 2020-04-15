@@ -1,0 +1,25 @@
+<h1>Listing Articles</h1>
+<div class="buttons">
+    <a href= "somelink" > <span class="top-buttons">Recent Post</span> </a>
+    <span class="top-buttons">Selected Post</span>
+    <span class="top-buttons">My Settings</span>
+    <a href= "new" > <span class="new-post">New Post</span> </a>
+</div>
+
+
+  <% @articles.each do |article| %>
+
+        <div style="display:flex;flex-flow:row nowrap;padding:16px;background-color:rgb(226, 226, 226);" >
+            <div class="imageholder">
+                <img src="https://cdn3.f-cdn.com/contestentries/1376995/30494909/5b566bc71d308_thumb900.jpg" alt="Flowers in Chania">  
+                </div>
+            <div class="post">
+                <p class="article-title"><%= link_to article.title, article_path(article) %></p>
+                <span class="subtext"><%= article.user %></span>
+                <span class="subtext"><%= article.created_at.to_formatted_s(:long) %></span>
+                <span class="subtext"><%= article.topic %></span>
+                <span class="subtext"><%= link_to 'View Article', article_path(article) %></span>
+                <span class="subtext"><%= link_to 'View Article', article_path(article) %></span>
+            </div>
+            
+  <% end %>

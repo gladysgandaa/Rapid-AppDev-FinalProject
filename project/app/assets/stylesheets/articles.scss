@@ -1,0 +1,97 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  /* Create two columns/boxes that floats next to each other */
+  img {
+    float: left;
+    height: 80px;
+    background: #ccc;
+  }
+  
+  article {
+    margin:0px;
+    padding-left: 20px;
+    float: left;
+    width: 85%;
+    background-color: #f1f1f1;
+    height: 80px; /* only for demonstration, should be removed */
+  }
+  
+  .article-title{
+    margin-top:20px;
+    margin-bottom:3px;
+  }
+
+  a:link {
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: hotpink;
+  }
+  
+  .subtext{
+      margin-top:0px;
+      margin-bottom:3px;
+      font-size:small;
+      padding-right: 10vw;
+  }
+  
+  .imageholder img
+  {
+      display: block;
+       margin-left: auto;
+       margin-right: auto;
+  }
+
+  /* Style tab links */
+.tablink {
+    background-color: #555;
+    color: white;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    font-size: 17px;
+    width: 25%;
+  }
+  
+  .tablink:hover {
+    background-color: #777;
+  }
+  
+  /* Style the tab content (and add height:100% for full page content) */
+  .tabcontent {
+    color: white;
+    display: none;
+    padding: 100px 20px;
+    height: 100%;
+  }
+
+  .top-buttons
+  {
+    color:white;
+    background-color: rgb(80, 80, 80); 
+    padding-left:5vw;
+    padding-right:5vw;
+    padding-top:16px;
+    padding-bottom:16px;
+  }
+
+  .buttons
+  {
+    padding-top:10px;
+    padding-bottom:30px;
+  }
+
+  .new-post{
+      @extend .top-buttons;
+      margin-left:auto;
+  }
+  
