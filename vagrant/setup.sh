@@ -8,5 +8,5 @@ sudo apt-get install -y postgresql postgresql-contrib postgresql-client libpq-de
 sudo -u postgres createuser -s -e `whoami`
 
 # gem install
-cd /app
+cd /project
 gem install bundler
