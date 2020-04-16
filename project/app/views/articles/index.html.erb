@@ -7,6 +7,10 @@
 </div>
 
 <div class="main-page">
+    <% if current_user %>
+    <li><%= link_to "Profile", current_user %> Logged in as <%= current_user.username %> </li>
+    <li><%= link_to "Log Out", logout_path %></li>
+<% end %>
 
     <div class="article-container">
         <% @articles.each do |article| %>

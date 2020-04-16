@@ -9,7 +9,7 @@
 </p>
 
 <p>
-  <strong>Text:</strong>
+  <strong>User:</strong>
   <%= @article.user %>
 </p>
 
@@ -33,12 +33,10 @@
 
 <h2>Add a comment:</h2>
 <%= form_with(model: [ @article, @article.comments.build ], local: true) do |form| %>
+<p>
+  <%= form.hidden_field :commenter, :value => current_user.username %>
+</p>
   <p>
-    <%= form.label :commenter %><br>
-    <%= form.text_field :commenter %>
-  </p>
-  <p>
-    <%= form.label :body %><br>
     <%= form.text_area :body %>
   </p>
   <p>
@@ -49,8 +47,13 @@
 <%= link_to 'Edit', edit_article_path(@article) %> |
 <%= link_to 'Back', articles_path %>
 
+<% if current_user.username == @article.user %>
 <p>
-  <%= link_to 'Delete Article (need to make sure this is only shown if the author is viewing the page', article_path(@article.id),
+  <%= link_to 'Delete Article', article_path(@article.id),
   method: :delete,
   data: { confirm: 'Are you sure?' } %>
 </p>
+
+<% end %>
+
+

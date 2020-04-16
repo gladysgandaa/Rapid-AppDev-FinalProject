@@ -22,12 +22,12 @@
   <p>
     <%= form.label :Text %><br>
     <%= form.text_area :text %>
+
   </p>
 
   <p>
-  Temporary user id
     <%= form.label :User %><br>
-    <%= form.text_field :user %>
+    <%= form.hidden_field :user, :value => current_user.username %>
   </p>
  
   <p>
