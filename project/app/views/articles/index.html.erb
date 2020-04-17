@@ -1,17 +1,30 @@
-<h1>News+ </h1>
-<div class="buttons">
-    <a href="somelink"> <span class="top-buttons">Recent Post</span> </a>
-    <span class="top-buttons">Selected Post</span>
-    <span class="top-buttons">My Settings</span>
-    <a href="articles/new"> <span class="new-post">New Post</span> </a>
-</div>
-
 <div class="main-page">
 
-    <div class="article-container">
+    <div class="row">
+
+    
+    <div class="left-section col-md-7">
+    <div class="row">
+
+    <div class="buttons col-md-12">
+        <div class="button-section col-md-2">
+        <a href="somelink"> <span class="top-buttons">Recent Post</span> 
+        </a>
+        </div>
+        <div class="button-section col-md-2">
+        <span class="top-buttons">Selected Post</span>
+        </div>
+        <div class="button-section col-md-2">
+        <span class="top-buttons">My Settings</span>
+        </div>
+        <input class="nav-search col-md-3" type="search" placeholder="Search" aria-label="Search">
+        <a class="new-post-button col-md-2" href="articles/new">New Post</a>
+    </div>
+
+    <div class="article-container col-md-12">
         <% @articles.each do |article| %>
 
-        <div style="display:flex;flex-flow:row nowrap;padding:16px;background-color:rgb(226, 226, 226);">
+        <div class="article-content">
             <div class="imageholder">
                 <img src="https://cdn3.f-cdn.com/contestentries/1376995/30494909/5b566bc71d308_thumb900.jpg"
                     alt="Flowers in Chania">
@@ -26,41 +39,48 @@
         </div>
         <% end %>
     </div>
+    </div>
+    </div>
 
-    <div class="right-page">
+    <div class="col-md-4">
+    <div class="row right-section">
 
-        <div class="recent-members">
+    <div class="recent-members col-md-12">
             <h2 class="small-header">Recent Members</h2>
             <% @users.each do |user| %>
-            <div style="display:flex;flex-flow:row nowrap;padding:16px;background-color:rgb(226, 226, 226);">
+            <div class="member-content col-md-3">
                 <div class="imageholder">
                     <img src="https://cdn3.f-cdn.com/contestentries/1376995/30494909/5b566bc71d308_thumb900.jpg"
                         alt="Flowers in Chania">
+                        <figcaption class="member-uname"><%= user.email %></figcaption>
                 </div>
-                <span class="subtext"><%= user.email %></span>
             </div>
 
+
             <% end %>
         </div>
-        <div class="topics">
+
+        <div class="topics col-md-12">
             <h2 class="small-header">Topics</h2>
-            <% @topics.each do |topic| %>            
-                <span class="subtext"><%= topic %></span>
+            <% @topics.each do |topic| %>  
+                <button class="button">
+                <%= topic %>
+                </button>          
             <% end %>
         </div>
-        <div class="post">
+
+        <div class="post col-md-12">
             <h2 class="small-header">Post</h2>
             Most viewed posts
-
         </div>
-        <div class="links">
+
+        <div class="links col-md-12">
             <h2 class="small-header">Links</h2>
-            <p> <a href="http://www.rubyonrails.org"> Ruby </a> </p>
-            <p> <a href="http://www.rmit.edu.au"> RMIT </a> </p>
-            
-            
-
+            <button class="button"> <a href="http://www.rubyonrails.org"> Ruby </a> </button>
+            <button class="button"> <a href="http://www.rmit.edu.au"> RMIT </a> </button>
         </div>
+    </div>
+    </div>
     </div>
 
 

@@ -1,130 +1,217 @@
-* {
-    box-sizing: border-box;
-  }
+// * {
+//     box-sizing: border-box;
+//   }
   
-  body {
-    font-family: Arial, Helvetica, sans-serif;
-  }
+//   body {
+//     font-family: Arial, Helvetica, sans-serif;
+//   }
   
-  /* Create two columns/boxes that floats next to each other */
+//   /* Create two columns/boxes that floats next to each other */
   img {
     float: left;
-    height: 80px;
+    height: 40px;
     background: #ccc;
   }
-  
-  article {
-    margin:0px;
-    padding-left: 20px;
-    float: left;
-    width: 85%;
-    background-color: #f1f1f1;
-    height: 80px; /* only for demonstration, should be removed */
-  }
-  
-  .article-title{
-    margin-top:20px;
-    margin-bottom:3px;
+
+  article{
+    margin-left: 2rem;
   }
 
-  a:link {
-    text-decoration: none;
-  }
-
-  a:hover {
-    color: hotpink;
+  .left-section, .right-section{
+    margin: 2rem;
   }
   
-  .subtext{
-      margin-top:0px;
-      margin-bottom:3px;
-      font-size:small;
-      padding-right: 10vw;
-  }
-  
-  .imageholder img
-  {
-      display: block;
-       margin-left: auto;
-       margin-right: auto;
+  .buttons{
+    margin-top: 1rem;
   }
 
-  /* Style tab links */
-.tablink {
-    background-color: #555;
-    color: white;
-    float: left;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    padding: 14px 16px;
-    font-size: 17px;
-    width: 25%;
-  }
-  
-  .tablink:hover {
-    background-color: #777;
-  }
-  
-  /* Style the tab content (and add height:100% for full page content) */
-  .tabcontent {
-    color: white;
-    display: none;
-    padding: 100px 20px;
-    height: 100%;
-  }
-
-  .top-buttons
-  {
-    color:white;
-    background-color: rgb(80, 80, 80); 
-    padding-left:5vw;
-    padding-right:5vw;
-    padding-top:16px;
-    padding-bottom:16px;
-  }
-
-  .buttons
-  {
-    padding-top:10px;
-    padding-bottom:30px;
-  }
-
-  .new-post{
-      @extend .top-buttons;
-      margin-left:auto;
-  }
-
-  .main-page{
-    display: flex;
-    width:100%;
-  }
-  .right-page{
-    display: flex;
-    flex-grow:3;
-    flex-flow: column;
-  }
-
-  .article-container{
-    display: flex;
-    flex-flow: column;
-    flex-grow:1;
-  }
-
-  // .small-header {
-  //   margin: 10px auto;
-  //   text-align: center;
-  //   background: #1abc9c;
-  //   color: white;
-  //   font-size: 16px;
-  // }
-
-  .recent-members, .topics, .post, .links{
-    width:100%;
-    margin: 10px auto;
+  .button {
+    border: 1px solid gray;
+    color: black;
+    background-color: white;
+    margin: 0.5rem;
     text-align: center;
-    background: #1abc9c;
-    color: white;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 40%;
+    height: 3rem;
+    width: 7rem;
+    line-height: 2rem;
+  }
+
+  .nav-search{
+    background-color: white;
+    text-align: left;
+    height: 3rem;
+    line-height: 30px;
+    border: 0.1px solid #cfd190;
+    margin-left: 2rem;
+    margin-right: 4rem;
+  }
+
+  .top-buttons{
+    font-size: 12px;
+  }
+  
+  .button-section{
+    background-color: white;
+    margin-bottom: 2rem;
+    text-align: center;
+    height: 3rem;
+    line-height: 30px;
+    border: 0.1px solid #cfd190;
+  }
+
+  .new-post-button{
+    background-color: #006400;
+    text-align: center;
+    height: 3rem;
+    line-height: 33px;
+    float: right;
+    color: white !important;
+  }
+  
+  .article-content{
+    display:flex;
+    flex-flow:row nowrap;
+    padding:16px;
+    margin-bottom: 0.1rem;
+    background-color:#FFF;
+  }
+
+  .recent-members, 
+  .topics, 
+  .post, 
+  .links{
+    background-color:#FFF;
+    margin: 1rem;
+    padding: 2rem !important;
+  }
+
+  .member-content{
+    display:flex;
+    flex-flow:row nowrap;
+    padding:16px;
+  }
+
+  .member-uname{
     font-size: 10px;
   }
+
+  .small-header {
+    text-align: left;
+    background: rgb(226, 226, 226);
+    color: #000;
+    font-size: 14px;
+    padding: 0.5rem 0rem 0.5rem 2rem;
+  }
+  
+
+
+//   article {
+//     margin:0px;
+//     padding-left: 20px;
+//     float: left;
+//     width: 85%;
+//     background-color: #f1f1f1;
+//     height: 80px; /* only for demonstration, should be removed */
+//   }
+  
+//   .article-title{
+//     margin-top:20px;
+//     margin-bottom:3px;
+//   }
+
+//   a:link {
+//     text-decoration: none;
+//   }
+
+//   a:hover {
+//     color: hotpink;
+//   }
+  
+//   .subtext{
+//       margin-top:0px;
+//       margin-bottom:3px;
+//       font-size:small;
+//       padding-right: 10vw;
+//   }
+  
+//   .imageholder img
+//   {
+//       display: block;
+//        margin-left: auto;
+//        margin-right: auto;
+//   }
+
+//   /* Style tab links */
+// .tablink {
+//     background-color: #555;
+//     color: white;
+//     float: left;
+//     border: none;
+//     outline: none;
+//     cursor: pointer;
+//     padding: 14px 16px;
+//     font-size: 17px;
+//     width: 25%;
+//   }
+  
+//   .tablink:hover {
+//     background-color: #777;
+//   }
+  
+//   /* Style the tab content (and add height:100% for full page content) */
+//   .tabcontent {
+//     color: white;
+//     display: none;
+//     padding: 100px 20px;
+//     height: 100%;
+//   }
+
+//   .top-buttons
+//   {
+//     color:white;
+//     background-color: rgb(80, 80, 80); 
+//     padding-left:5vw;
+//     padding-right:5vw;
+//     padding-top:16px;
+//     padding-bottom:16px;
+//   }
+
+//   .buttons
+//   {
+//     padding-top:10px;
+//     padding-bottom:30px;
+//   }
+
+//   .new-post{
+//       @extend .top-buttons;
+//       margin-left:auto;
+//   }
+
+//   .main-page{
+//     display: flex;
+//     width:100%;
+//   }
+//   .right-page{
+//     display: flex;
+//     flex-grow:3;
+//     flex-flow: column;
+//   }
+
+//   .article-container{
+//     display: flex;
+//     flex-flow: column;
+//     flex-grow:1;
+//   }
+
+//   .recent-members, .topics, .post, .links{
+//     width:100%;
+//     margin: 10px auto;
+//     text-align: center;
+//     background: #1abc9c;
+//     color: white;
+//     font-size: 10px;
+//   }
   
