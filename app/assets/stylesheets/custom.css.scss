@@ -1,0 +1,217 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome";
+
+/* typography */
+
+html{
+  position: relative;
+}
+
+.container-fluid{
+  padding: 0 !important;
+  display: grid;
+}
+
+body {
+  background: lightgrey !important;
+}
+
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.center {
+  text-align: center;
+}
+
+.center h1 {
+  margin-bottom: 10px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1;
+}
+
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.2em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+  color: #777;
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.7em;
+}
+
+button:hover{
+  background-color: darkslategray;
+}
+
+/* header */
+
+.navbar{
+  border: none !important;
+  border-radius: none !important;
+  height: 60px;
+}
+
+.navbar-header h1{
+  color: white;
+  margin: 10px 0;
+}
+
+.nav-list{
+  line-height: 30px !important;
+}
+
+.nav-username{
+  line-height: 58px !important;
+}
+
+.navbar-inverse{
+  background-color: #505050 !important;
+}
+
+.user-icon{
+  float: right !important;
+}
+
+
+/* footer */
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  color: #FFF;
+  background-color: #333;
+  width: 100%;
+  height: 60px;
+  bottom: 0;
+  line-height: 50px;
+}
+
+.footer-content{
+  text-align: center;
+}
+
+@mixin box_sizing {
+  -moz-box-sizing:    border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing:         border-box;
+}
+
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+  @include box_sizing;
+}
+
+/* forms */
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
+  @include box_sizing;
+  display: inline-block;
+}
+
+input {
+  height: auto !important;
+}
+
+/* forms */
+
+// #error_explanation {
+//   color: red;
+//   ul {
+//     color: red;
+//     margin: 0 0 30px 0;
+//   }
+// }
+
+// .field_with_errors {
+//   @extend .has-error;
+//   .form-control {
+//     color: $state-danger-text;
+//   }
+// }
+
+.field_with_errors input{
+  border-color: red;
+}
+
+
+// My Settings (User Update)
+
+.user-settings{
+  margin-left: 40px !important;
+}
+
+.settings-nav{
+  background-color: black;
+  a{
+    color: white;
+  }
+
+  .side-nav{
+    width: 100%;
+    height: 10%;
+    line-height: 50px;
+  }
+}
+
+.update-details{
+  background-color: white;
+  padding: 10px;
+
+    .top-nav{
+      height: 30px;
+      line-height: 50px;
+    }
+
+    hr{
+      width:"100%";
+      size:"10";
+      align:"center";
+    }
+  }
+
+.top-nav{
+  a{
+    color: black !important;
+  }
+
+  a:hover{
+    color: green !important;
+  }
+}
+
+.settings-nav, .update-details{
+  margin: 10px;
+  height: 500px;
+}
