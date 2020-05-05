@@ -15,7 +15,7 @@
         <span class="top-buttons">Selected Post</span>
         </div>
         <div class="button-section col-md-2">
-        <span class="top-buttons">My Settings</span>
+        <span class="top-buttons"><%= link_to "My Settings", edit_user_path(current_user) %></span>
         </div>
         <input class="nav-search col-md-3" type="search" placeholder="Search" aria-label="Search">
         <a class="new-post-button col-md-2" href="articles/new">New Post</a>
@@ -52,7 +52,7 @@
                 <div class="imageholder">
                     <img src="https://cdn3.f-cdn.com/contestentries/1376995/30494909/5b566bc71d308_thumb900.jpg"
                         alt="Flowers in Chania">
-                        <figcaption class="member-uname"><%= user.email %></figcaption>
+                        <figcaption class="member-uname"><%= user.username %></figcaption>
                 </div>
             </div>
 

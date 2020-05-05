@@ -1,25 +1,24 @@
 <header class="navbar navbar-inverse">
   <div class="navbar-inner">
     <div class="container">
-      <div class="navbar-header col-md-2">
+      <div class="navbar-header col-md-2 col-sm-2">
         <h1 class="beta">News+</h1>
       </div>
-      <nav class="navbar-collapse col-md-7">
+      <nav class="navbar-collapse col-md-7 col-sm-7">
         <ul class="nav navbar-nav navbar-centered">
           <li><%= link_to "Home", articles_path, class:"nav-list" %></li>
             <li class="dropdown">
               <a href="#" class=" nav-list dropdown-toggle" data-toggle="dropdown"> News <b class="caret"></b></a>
               <ul class="dropdown-menu" role="menu">
                 <li><%= link_to "Profile", "#", class:"nav-list" %></li>
-                <li class="divider"></li>
                 <li><%= link_to "Sign out", "#", method: "delete" %></li>
               </ul>
             </li>
-            <li><div class="nav-username"><%= current_user.email %></div></li>
         </ul>
       </nav>
-      <div class="navbar-header col-md-3">
-      <h1 class="beta">News+</h1>
+      <div class="user-icon col-md-3 col-sm-3">
+        <img src="https://cdn3.f-cdn.com/contestentries/1376995/30494909/5b566bc71d308_thumb900.jpg"
+        alt="Flowers in Chania">
       </div>
     </div>
   </div>

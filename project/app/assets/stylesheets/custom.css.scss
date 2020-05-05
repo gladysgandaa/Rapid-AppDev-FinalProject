@@ -1,5 +1,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "font-awesome";
 
 /* typography */
 
@@ -13,7 +14,7 @@ html{
 }
 
 body {
-  background: #cfd190 !important;
+  background: lightgrey !important;
 }
 
 
@@ -63,6 +64,10 @@ p {
   line-height: 1.7em;
 }
 
+button:hover{
+  background-color: darkslategray;
+}
+
 /* header */
 
 .navbar{
@@ -86,6 +91,16 @@ p {
 
 .navbar-inverse{
   background-color: #505050 !important;
+}
+
+.user-icon{
+  float: right !important;
+  margin-top: 10px;
+
+  img{
+    border-radius: 50%;
+    float: right;
+  }
 }
 
 
@@ -137,17 +152,72 @@ input {
 
 /* forms */
 
-#error_explanation {
-  color: red;
-  ul {
-    color: red;
-    margin: 0 0 30px 0;
+// #error_explanation {
+//   color: red;
+//   ul {
+//     color: red;
+//     margin: 0 0 30px 0;
+//   }
+// }
+
+// .field_with_errors {
+//   @extend .has-error;
+//   .form-control {
+//     color: $state-danger-text;
+//   }
+// }
+
+.field_with_errors input{
+  border-color: red;
+}
+
+
+// My Settings (User Update)
+
+.user-settings{
+  margin-left: 40px !important;
+}
+
+.settings-nav{
+  background-color: black;
+  a{
+    color: white;
+  }
+
+  .side-nav{
+    width: 100%;
+    height: 10%;
+    line-height: 50px;
   }
 }
 
-.field_with_errors {
-  @extend .has-error;
-  .form-control {
-    color: $state-danger-text;
+.update-details{
+  background-color: white;
+  padding: 10px;
+
+    .top-nav{
+      height: 30px;
+      line-height: 50px;
+    }
+
+    hr{
+      width:"100%";
+      size:"10";
+      align:"center";
+    }
   }
+
+.top-nav{
+  a{
+    color: black !important;
+  }
+
+  a:hover{
+    color: green !important;
+  }
+}
+
+.settings-nav, .update-details{
+  margin: 10px;
+  height: 500px;
 }
