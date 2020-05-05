@@ -6,5 +6,7 @@ class ApplicationController < ActionController::Base
     else
       @current_user = nil
     end
+  rescue ActiveRecord::RecordNotFound
+    reset_session
   end
 end
