@@ -15,12 +15,18 @@
         <span class="top-buttons">Selected Post</span>
         </div>
             <% if current_user %>
+            Logged in as <%= current_user.email %>.
+            <%= link_to "Log Out", logout_path %>
             <div class="button-section col-md-2">
                 <span class="top-buttons"><%= link_to "My Settings", edit_user_path(current_user) %></span>
             </div>
             
             <input class="nav-search col-md-3" type="search" placeholder="Search" aria-label="Search">
             <a class="new-post-button col-md-2" href="articles/new">New Post</a>
+            <% else %>
+            <%= link_to "Sign Up", signup_path %> or
+            <%= link_to "Log In", login_path %>
+            
             <% end %>
     </div>
 
