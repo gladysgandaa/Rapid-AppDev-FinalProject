@@ -21,7 +21,7 @@
 <h2>Comments</h2>
 <% @article.comments.each do |comment| %>
   <p>
-    <strong>Commenter:</strong>
+    <strong>User:</strong>
     <%= comment.commenter %>
   </p>
  
@@ -34,12 +34,8 @@
 <h2>Add a comment:</h2>
 <%= form_with(model: [ @article, @article.comments.build ], local: true) do |form| %>
   <p>
-    <%= form.label :commenter %><br>
-    <%= form.text_field :commenter %>
-  </p>
-  <p>
     <%= form.label :body %><br>
-    <%= form.text_area :Comments, placeholder: "Please input your comments", :size =>"45x2", :style => "font-size:small;" %>
+    <%= form.text_area :body, placeholder: "Please input your comments", :size =>"45x2", :style => "font-size:small;" %>
   </p>
   <p>
     <%= form.submit %>

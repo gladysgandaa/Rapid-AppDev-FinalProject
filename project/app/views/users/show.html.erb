@@ -12,6 +12,20 @@
   <strong>Email:</strong>
   <%= @user.email %>
 </p>
+<h2>Comments</h2>
+<% @user.comments.each do |comment| %>
+  <p>
+    <strong>Article:</strong>
+    <%= 
+    a = Article.find_by_id(comment.article_id)
+    a.title %>
+  </p>
+ 
+  <p>
+    <strong>Comment:</strong>
+    <%= comment.body %>
+  </p>
+<% end %>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

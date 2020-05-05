@@ -10,4 +10,6 @@ class User < ApplicationRecord
   validates :mobile, presence: true, format: { with: VALID_MOBILE_REGEX }, uniqueness: true
   VALID_PASSWORD_REGEX = /\A([a-zA-Z0-9]{8,20})\z/
   validates :password, presence: true, length: { minimum: 8 }, format: { with: VALID_PASSWORD_REGEX }, allow_nil: true
+  has_many :articles
+  has_many :comments
 end
