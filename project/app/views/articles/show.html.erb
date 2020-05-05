@@ -1,3 +1,13 @@
+
+<p>
+  View count:  <%=  @article.viewcount %>
+  <% @article.viewcount = @article.viewcount + 1 
+  @article.save%>
+</p>
+
+
+
+
 <p>
   <strong>Title:</strong>
   <%= @article.title %>
@@ -18,7 +28,8 @@
   <%= @article.topic %>
 </p>
 
-<h2>Comments</h2>
+
+<h2> <%= @article.commentcount %> Comments</h2>
 <% @article.comments.each do |comment| %>
   <p>
     <strong>User:</strong>
@@ -31,22 +42,29 @@
   </p>
 <% end %>
 
-<h2>Add a comment:</h2>
-<%= form_with(model: [ @article, @article.comments.build ], local: true) do |form| %>
-  <p>
-    <%= form.label :body %><br>
-    <%= form.text_area :body, placeholder: "Please input your comments", :size =>"45x2", :style => "font-size:small;" %>
-  </p>
-  <p>
-    <%= form.submit %>
-  </p>
+<% if current_user %>
+  <h2>Add a comment:</h2>
+  <%= form_with(model: [ @article, @article.comments.build ], local: true) do |form| %>
+    <p>
+      <%= form.label :body %><br>
+      <%= form.text_area :body, placeholder: "Please input your comments", :size =>"45x2", :style => "font-size:small;" %>
+    </p>
+    <p>
+      <%= form.submit %>
+    </p>
+  <% end %>
+<% else %>
+  <h2>Sign in to Add a comment:</h2>
 <% end %>
+
+
  
 <%= link_to 'Edit', edit_article_path(@article) %> |
 <%= link_to 'Back', articles_path %>
 
 <p>
-  <%= if @article.user_id == current_user.id
+
+  <%= if current_user && @article.user_id == current_user.id
   link_to 'Delete Article', article_path(@article.id),
   method: :delete,
   data: { confirm: 'Are you sure?' }

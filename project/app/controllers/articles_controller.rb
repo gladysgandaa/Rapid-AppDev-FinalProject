@@ -22,6 +22,8 @@ class ArticlesController < ApplicationController
         @article = Article.new(article_params)
         @article.user_id = current_user.id
         @article.user = current_user.username
+        @article.viewcount = 0
+        @article.commentcount = 0
        
         if @article.save
         redirect_to @article

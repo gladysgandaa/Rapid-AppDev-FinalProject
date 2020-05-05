@@ -8,8 +8,18 @@ class CommentsController < ApplicationController
         @comment.article_id = params[:article_id]
         @comment.commenter = current_user.username
         @comment.save
+        @article.commentcount = @article.commentcount + 1
+        @article.save
         puts(@comment.user_id)
         # @comment = @article.comments.create(comment_params.merge(user_id: current_user))
+        redirect_to article_path(@article)
+      end
+
+      def delete
+        @article = Article.find(params[:article_id])
+        @article.commentcount = @article.commentcount - 1
+        @article.save
+        @comment.delete
         redirect_to article_path(@article)
       end
      

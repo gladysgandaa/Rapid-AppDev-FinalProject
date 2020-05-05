@@ -45,6 +45,8 @@
                 <span class="subtext"><%= article.created_at.to_formatted_s(:long) %></span>
                 <span class="subtext"><%= article.topic %></span>
                 <span class="subtext"><%= link_to 'View Article', article_path(article) %></span>
+                <span class="subtext">Views: <%= article.viewcount %></span>
+                <span class="subtext">Comments: <%= article.commentcount %></span>
             </article>
         </div>
         <% end %>
