@@ -15,15 +15,29 @@
 <h2>Comments</h2>
 <% @user.comments.each do |comment| %>
   <p>
-    <strong>Article:</strong>
-    <%= 
-    a = Article.find_by_id(comment.article_id)
-    a.title %>
+    <strong>Article: <%= 
+      a= Article.find_by_id(comment.article_id)
+      a.title 
+    %></strong>
+    <p class="subtext"><%= comment.created_at.to_formatted_s(:long) %></p>
+    <p>
+      <strong>Comment:</strong>
+      <%= comment.body %>
+    </p>
+    <%= link_to 'View article', article_path(a.id) %> 
   </p>
  
+
+<% end %>
+
+<h2>Articles</h2>
+<% @user.articles.each do |article| %>
   <p>
-    <strong>Comment:</strong>
-    <%= comment.body %>
+    <strong>Article: <%= article.title %></strong>
+    <p class="subtext"><%= article.user %></p>
+    <p class="subtext"><%= article.created_at.to_formatted_s(:long) %></p>
+    <p class="subtext"><%= article.topic %></p>
+    <%= link_to 'View article', article_path(article.id) %> 
   </p>
 <% end %>
 
