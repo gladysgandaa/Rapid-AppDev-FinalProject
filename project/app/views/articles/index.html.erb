@@ -41,7 +41,7 @@
             </div>
             <article>
                 <p class="article-title"><%= link_to article.title, article_path(article) %></p>
-                <span class="subtext"><%= article.user %></span>
+                <span class="subtext"><%= link_to article.user, user_path(article.user_id) %></span>
                 <span class="subtext"><%= article.created_at.to_formatted_s(:long) %></span>
                 <span class="subtext"><%= article.topic %></span>
                 <span class="subtext"><%= link_to 'View Article', article_path(article) %></span>
