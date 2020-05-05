@@ -38,6 +38,9 @@
     <p class="subtext"><%= article.created_at.to_formatted_s(:long) %></p>
     <p class="subtext"><%= article.topic %></p>
     <%= link_to 'View article', article_path(article.id) %> 
+    <%= link_to 'Delete Article', article_path(article.id),
+  method: :delete,
+  data: { confirm: 'Are you sure?' } %>
   </p>
 <% end %>
 

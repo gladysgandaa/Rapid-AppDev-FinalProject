@@ -46,7 +46,9 @@
 <%= link_to 'Back', articles_path %>
 
 <p>
-  <%= link_to 'Delete Article (need to make sure this is only shown if the author is viewing the page', article_path(@article.id),
+  <%= if @article.user_id == current_user.id
+  link_to 'Delete Article', article_path(@article.id),
   method: :delete,
-  data: { confirm: 'Are you sure?' } %>
+  data: { confirm: 'Are you sure?' }
+  end %>
 </p>
