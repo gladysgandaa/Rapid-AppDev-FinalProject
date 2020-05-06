@@ -8,6 +8,8 @@ class ArticlesController < ApplicationController
 
     def show
         @article = Article.find(params[:id])
+        @users = User.all
+        @topics = Article.distinct.pluck(:topic)
     end
     
     def new

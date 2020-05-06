@@ -11,16 +11,25 @@
               <a href="#" class=" nav-list dropdown-toggle" data-toggle="dropdown"> News <b class="caret"></b></a>
               <!-- <ul class="dropdown-menu" role="menu"> -->
                 <% if current_user %>
-                <li><%= link_to "Profile", user_path(current_user), class:"nav-list" %></li>
-                <li><%= link_to "Sign out", logout_path, method: "delete" %></li>
+                  <li class="login-user"><%= current_user.username%></li>
                 <% end %>
               <!-- </ul> -->
-            </li>
+
         </ul>
       </nav>
       <div class="user-icon col-md-3 col-sm-3">
-        <img src="https://cdn3.f-cdn.com/contestentries/1376995/30494909/5b566bc71d308_thumb900.jpg"
-        alt="Flowers in Chania" href="">
+      <div class="dropdown">
+          <img class="dropbtn" src="https://cdn3.f-cdn.com/contestentries/1376995/30494909/5b566bc71d308_thumb900.jpg"
+            alt="Flowers in Chania" href="">
+          <div class="dropdown-content">
+          <% if current_user %>
+            <li><%= link_to "Sign out", logout_path, method: "delete" %></li>
+          <% else %>
+            <li><%= link_to "Sign Up", signup_path %></li>
+            <li><%= link_to "Log In", login_path %></li>
+          <% end %>
+          </div>
+        </div>
       </div>
     </div>
   </div>
