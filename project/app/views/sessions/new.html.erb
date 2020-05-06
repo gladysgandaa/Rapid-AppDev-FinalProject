@@ -11,6 +11,12 @@
     <%= label_tag :password, nil, :class => "col-sm-3 col-form-label" %>
     <div class="col-sm-9"><%= password_field_tag :password, nil, :class => "form-control", :placeholder => 'enter your password' %></div>
   </div>
+
+  <%= label_tag :remember_me, nil, :class => "checkbox inline" do %>
+  <%= check_box_tag :remember_me %>
+  <span> Remember me </span>
+  <% end %>
+
   <div class="actions">
     <%= submit_tag "Login" %>
   </div>

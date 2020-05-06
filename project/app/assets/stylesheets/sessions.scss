@@ -22,3 +22,22 @@
     width: 35rem;
     margin: auto;
 }
+
+.checkbox{
+    margin-top: -10px;
+    margin-bottom: 10px;
+    float: left;
+
+    #remember_me{
+        margin-left: -55px !important;
+    }
+    span{
+        margin-left: 28px;
+        font-weight: none;
+    }
+}
+
+#session_remember_me{
+    width: auto;
+    margin-left: 0;
+}
