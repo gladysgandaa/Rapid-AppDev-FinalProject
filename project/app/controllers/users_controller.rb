@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:index, :show, :edit, :update, :destroy]
+  before_action :logged_in_user,  only: [:index, :edit, :update, :destroy]
 
   # GET /users
   # GET /users.json
@@ -72,5 +73,13 @@ class UsersController < ApplicationController
     # Only allow a list of trusted parameters through.
     def user_params
       params.require(:user).permit(:email, :password, :password_confirmation, :username, :mobile)
+    end
+
+    def logged_in_user
+      unless logged_in?
+        store_location
+        flash[:danger] = "Please log in"
+        redirect_to login_url
+      end
     end
 end
