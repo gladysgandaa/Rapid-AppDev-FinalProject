@@ -1,6 +1,4 @@
 <div class="article_form">
-  
-<h1>New Article</h1>
 
 <%= form_with(model: @article, local: true) do |form| %>
 
@@ -14,23 +12,23 @@
     </div>
   <% end %>
 
-  <p>
-    <%= form.label :Title %><br>
-    <%= form.text_field :title %>
-  </p>
- 
-  <p>
-    <%= form.label :Text %><br>
-    <%= form.text_area :text %>
-  </p>
- 
-  <p>
-    <%= form.label :Topic %><br>
-    <%= form.select :topic, ['AI', 'Virtual Reality', 'RMIT', 'Machine Learning']%>
-  </p>
+  <div class="new-title">Post</div>
+  <div class="article-topic">
+    <%= form.label :Topic , :class => "col-sm-1 col-form-label" %>
+    <div class="col-sm-11"><%= form.select :topic, ['AI', 'V.R', 'RMIT', 'Machine Learning']%></div>
+  </div>
 
-   <p>
-    <%= form.submit %>
+  <div class="article-title">
+    <%= form.label :Title , :class => "col-sm-1 col-form-label" %>
+    <div class="col-sm-11"><%= form.text_field :title , :placeholder => 'Enter Post title here' %></div>
+  </div>
+ 
+  <div class="article-textarea">
+    <%= form.text_area :text %>
+  </div>
+
+    <div class="post-link"><%= form.submit %></div>
+    <button class="post-link cancel"><%= link_to 'Cancel', articles_path %></button>
   </p>
 <% end %>
 </div>

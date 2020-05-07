@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_secure_password
+  before_create { generate_token(:remember_token)}
   before_save { self.email = email.downcase }
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true, length: { maximum: 255 },
@@ -12,4 +13,10 @@ class User < ApplicationRecord
   validates :password, presence: true, length: { minimum: 8 }, format: { with: VALID_PASSWORD_REGEX }, allow_nil: true
   has_many :articles
   has_many :comments
+
+  def generate_token(column)
+    begin 
+      self[column] = SecureRandom.urlsafe_base64
+    end while User.exists?(column => self[column])
+  end
 end
