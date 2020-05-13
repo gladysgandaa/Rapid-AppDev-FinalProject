@@ -46,10 +46,6 @@ ActiveRecord::Schema.define(version: 2020_05_07_091301) do
     t.datetime "updated_at", null: false
     t.string "username"
     t.string "mobile"
-    t.string "remember_digest"
-    t.string "auth_token"
-    t.string "password_reset_token"
-    t.datetime "password_reset_sent_at"
     t.string "remember_token"
     t.index ["email"], name: "index_users_on_email", unique: true
   end

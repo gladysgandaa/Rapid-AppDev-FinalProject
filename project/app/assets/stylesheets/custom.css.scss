@@ -1,4 +1,3 @@
-  
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
@@ -219,6 +218,55 @@ input {
   margin-left: 40px !important;
 }
 
+// #user-profile, 
+#user-post,
+#user-comment,
+#received-comment,
+#user-edit{
+  display: none;
+}
+
+#user-profile .row{
+  background-color: white;
+  height: unset !important;
+}
+
+#user-profile .user-details{
+    padding-top: 10px !important;
+    height: unset;
+    margin: 20px 0;
+    background-color: unset !important;
+}
+
+#user-profile 
+.user-articles, 
+.user-comments{
+    width: 45% !important;
+    padding: 0 !important;
+    margin: 10px;
+    background-color: white;
+    height: unset !important;
+}
+
+#user-post .user-articles{
+  width: unset !important;
+}
+
+#user-comment .user-comments{
+  width: unset !important;
+}
+
+#user-edit input[type=submit]{
+  width: 39%;
+  margin-left: 26%;
+}
+
+
+
+.settings-section{
+  background-color: white;
+}
+
 .settings-nav{
   background-color: black;
   a{
@@ -233,7 +281,7 @@ input {
 }
 
 .update-details{
-  background-color: white;
+  // background-color: white;
   padding: 10px;
 
     .top-nav{
@@ -258,9 +306,13 @@ input {
   }
 }
 
-.settings-nav, .update-details{
+.settings-nav{
+height: 500px;
+}
+
+.settings-nav, .settings-section{
   margin: 10px;
-  height: 500px;
+
 }
 
 //User Profile / My Profile
@@ -289,7 +341,7 @@ input {
   padding: 0 !important;
   margin: 10px;
   background-color: white;
-  // height: 300px;
+  height: 300px;
   width: 48.5% !important;
 
   ul{
