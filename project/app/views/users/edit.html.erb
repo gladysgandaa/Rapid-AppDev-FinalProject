@@ -23,7 +23,7 @@
                 </div>
                 <div class="col-md-12 col-sm-12">
                     2020-02-04
-                    Mars
+                    <%= @user.city %>
                 </div>
             </div>
             </div>
@@ -102,36 +102,83 @@
 
 
     <div id="user-edit" class="user-data">
-    <div class="update-details">
-        <div class="row top-nav">
-            <div class="col-md-2"><a href="#">Personal Info</a></div>
-            <div class="col-md-2"><a href="#">Avatar</a></div>
-            <div class="col-md-2"><a href="#">Password</a></div>
-            <div class="col-md-2"><a href="#">Verification</a></div>
-        </div>
-     <hr>
-        <%= form_with(model: @user, local: true) do |form| %>
-        <div class="form-group row">
-        <%= form.label :username, class:"col-sm-3 col-form-label" %>
-        <div class="col-sm-5"><%= form.text_field :username,class:"form-control", placeholder: 'enter user name' %></div>
+        <div class="update-details">
+            <div class="row top-nav">
+                <a rel="user-info" class="col-md-2">Personal Info</a>
+                <a rel="user-avatar" class="col-md-2">Avatar</a>
+                <a rel="user-password" class="col-md-2">Password</a>
+                <a rel="user-verification" class="col-md-2">Verification</a>
+            </div>
+        <hr>
         </div>
 
-        <div class="form-group row">
-            <%= form.label :email, class:"col-sm-3 col-form-label" %>
-            <div class="col-sm-5"><%= form.text_field :email,class:"form-control", placeholder: 'enter email' %></div>
-        </div>
+        <div class="update-user">
+            <div id="user-info">
+                <%= form_with(model: @user, local: true) do |form| %>
+                    <div class="form-group row">
+                    <%= form.label :username, class:"col-sm-3 col-form-label" %>
+                    <div class="col-sm-5"><%= form.text_field :username,class:"form-control", placeholder: 'enter user name' %></div>
+                    </div>
 
-        <div class="form-group row">
-            <%= form.label :mobile, class:"col-sm-3 col-form-label" %>
-            <div class="col-sm-5"><%= form.text_field :mobile,class:"form-control", placeholder: 'mobile number' %></div>
-        </div>
+                    <div class="form-group row">
+                        <%= form.label :email, class:"col-sm-3 col-form-label" %>
+                        <div class="col-sm-5"><%= form.text_field :email,class:"form-control", placeholder: 'enter email' %></div>
+                    </div>
 
-        <div class="actions">
-        <%= form.submit %>
+                    <div class="form-group row">
+                        <%= form.label :mobile, class:"col-sm-3 col-form-label" %>
+                        <div class="col-sm-5"><%= form.text_field :mobile,class:"form-control", placeholder: 'mobile number' %></div>
+                    </div>
+
+                    <div class="form-group row">
+                        <%= form.label :city, class:"col-sm-3 col-form-label" %>
+                        <div class="col-sm-5"><%= form.text_field :city,class:"form-control", placeholder: 'enter city' %></div>
+                    </div>
+
+                    <div class="form-group row">
+                        <%= form.label :personal_introduction, class:"col-sm-3 col-form-label" %>
+                        <div class="col-sm-5"><%= form.text_area :body, placeholder: "Leave your personal bio here!", :size =>"45x8", :style => "font-size:small;" %></div>
+                    </div>
+
+                    <div class="actions">
+                    <%= form.submit %>
+                    </div>
+                 <% end %>
+            </div>
+            <div id="user-avatar"> 
+            <%= form_for(@user, html: { multiport: true}) do |form| %>
+                
+                <%= form.file_field :avatar %>
+
+                <div class="actions">
+                <%= form.submit "Save gravatar" %>
+            </div>
+            <% end %>
+            </div>
+
+            <div id="user-password">
+                <%= form_with(model: @user, local: true) do |form| %>
+
+                    <div class="form-group row">
+                        <%= form.label :password, class:"col-sm-3 col-form-label" %>
+                        <div class="col-sm-5"><%= form.password_field :password,class:"form-control", placeholder: 'Please confirm new password' %></div>
+                    </div>
+
+                    <div class="form-group row">
+                        <%= form.label :password_confirmation, class:"col-sm-3 col-form-label" %>
+                        <div class="col-sm-5"><%= form.password_field :password_confirmation,class:"form-control", placeholder: 'Please confirm new password' %></div>
+                    </div>
+                
+                <div class="actions">
+                <%= form.submit %>
+            </div>
+            
+            <%end%>
+            </div>
+
+            <div id="user-verification"> User Verification </div>
         </div>
-        <% end %>
     </div>
-</div>
 
 
 </div>
