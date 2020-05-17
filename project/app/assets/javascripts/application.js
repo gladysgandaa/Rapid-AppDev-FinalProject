@@ -12,7 +12,49 @@
 //
 //= require activestorage
 //= require turbolinks
-//= require_tree .
+//= require articles
 //= require jquery
 //= require jquery_ujs
 //= require settings.js
+//= require_tree .
+
+$( document ).on('turbolinks:load', function() {
+    console.log("It works on each visit!")
+  })
+
+$(document).on('turbolinks:load', function() {
+    $("#SelectedPosts").hide();
+  });
+
+$(document).on('turbolinks:load', function() {
+  $("[data-js-hide-link]").click(function (event) {
+    $(this).parents("li").hide();
+    event.preventDefault();
+  });
+});
+
+$(document).on('turbolinks:load', function() {
+  $("[data-js-toggle-topic]").click(function (event) {
+    $("." + event.currentTarget.getAttribute("data-topic")).toggle();
+    console.log("hiding: ." + event.currentTarget.getAttribute("data-topic"));
+    event.preventDefault();
+  });
+});
+
+$(document).on('turbolinks:load', function() {
+  $("[data-js-selected-posts]").click(function (event) {
+    console.log("Selected Posts");
+    $("#SelectedPosts").show();
+    $("#RecentPosts").hide();
+    event.preventDefault();
+  });
+});
+
+$(document).on('turbolinks:load', function() {
+  $("[data-js-recent-posts]").click(function (event) {
+    console.log("Recent Posts");
+    $("#SelectedPosts").hide();
+    $("#RecentPosts").show();
+    event.preventDefault();
+  });
+});
