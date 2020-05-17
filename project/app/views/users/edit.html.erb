@@ -97,7 +97,27 @@
 
 
     <div id="received-comment">
-    <p>Received comment</p>
+    <p>Received comments</p>
+    <div class="user-comments">
+        <ul> <div class="sub-title"> Received Comments: </div>
+        <li>
+        <% @user.articles.each do |article| %>
+            <% article.comments.each do |comment| %>
+
+            <strong><%= comment.commenter %>  <%= comment.created_at.to_formatted_s(:long) %> </strong> in 
+            <%= 
+            a= Article.find_by_id(comment.article_id)
+            a.title
+            %>
+            comment:
+            <div class="comment"> <%= comment.body %> </div>
+            <hr>
+            <% end  %>        
+            <% end %>
+        </li>
+        </ul>
+        <%# <%= link_to 'View article', article_path(a.id) %> 
+    </div>
     </div>
 
 
