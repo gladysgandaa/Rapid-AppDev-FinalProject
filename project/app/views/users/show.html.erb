@@ -6,9 +6,9 @@
             <%= @user.username %>
           </div>
           <div class="col-md-12 col-sm-12">
-            <%= @user.created_at %>
-            <%= @user.city %>
-          </div>
+            <p> User Joined:  <%= @user.created_at.to_formatted_s(:long) %></p>
+            <p><%= @user.city %></p>
+        </div>
     </div>
     </div>
 
