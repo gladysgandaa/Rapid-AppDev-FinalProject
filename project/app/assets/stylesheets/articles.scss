@@ -17,13 +17,32 @@ article{
   margin-top: 1rem;
 }
 
+#VR, #AI, #RMIT, #Rails, #ML{
+  color: orange;
+}
 .button {
+  border: 1px solid gray;
+  color: blue;
+  background-color: white;
+  margin: 0.5rem;
+  text-align: center;
+  text-decoration: none;
+  text-decoration-line: none;
+  display: inline-block;
+  border-radius: 40%;
+  height: 3rem;
+  width: 7rem;
+  line-height: 2rem;
+}
+
+.button:hover, .button:active {
   border: 1px solid gray;
   color: black;
   background-color: white;
   margin: 0.5rem;
   text-align: center;
   text-decoration: none;
+  text-decoration-line: none;
   display: inline-block;
   border-radius: 40%;
   height: 3rem;

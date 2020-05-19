@@ -76,8 +76,6 @@
                                         <span class="subtext"><%= link_to 'View Article', article_path(article) %></span>
                                         <span class="subtext">Views: <%= article.viewcount %></span>
                                         <span class="subtext">Comments: <%= article.commentcount %></span>
-                                        <li><%= article.title %>
-                                            <%= link_to "Hide", "hide", data: {'js-hide-link' => true} %></li>
                                     </article>
                                 </div>
                             <% end %>
@@ -109,16 +107,23 @@
                   <div class="topics col-md-12">
                       <h2 class="small-header">Topics</h2>
                       <% @topics.each do |topic| %>
-                      <% if topic != '-' %>
-                      <li><%= link_to topic, "", class: 'button', data: {'js-toggle-topic' => true, 'topic' => topic} %>
-                      </li>
-                      <% end %>
+                        <% if topic != '-' %>
+                        <li><%= link_to topic, "", id: topic, class: 'button', data: {'js-toggle-topic' => true, 'topic' => topic} %>
+                        </li>
+                        <% end %>
                       <% end %>
                   </div>
 
                   <div class="post col-md-12">
                       <h2 class="small-header">Post</h2>
                       Most viewed posts
+                      <% @posts = Article.order('viewcount DESC').limit(5) %>
+                         <% @posts.each do |article| %>
+                         <li><%= link_to article.title, article_path(article)%> Views: <%= article.viewcount %></li>
+                         <% end %>
+
+                      
+                     
                   </div>
 
                   <div class="links col-md-12">
