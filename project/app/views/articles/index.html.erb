@@ -63,7 +63,8 @@
                                     article.topic = 'News' 
                                 end %>
                                 <% puts article.topic %>
-                                <div class="article-content">
+                                <div class="article-content"
+                                >
                                     <div class="imageholder">
                                         <img src="https://cdn3.f-cdn.com/contestentries/1376995/30494909/5b566bc71d308_thumb900.jpg"
                                             alt="Flowers in Chania">
@@ -108,8 +109,8 @@
                       <h2 class="small-header">Topics</h2>
                       <% @topics.each do |topic| %>
                         <% if topic != '-' %>
-                        <li><%= link_to topic, "", id: topic, class: 'button', data: {'js-toggle-topic' => true, 'topic' => topic} %>
-                        </li>
+                        <button><%= link_to topic, "", id: topic, data: {'js-toggle-topic' => true, 'topic' => topic} %>
+                        </button>
                         <% end %>
                       <% end %>
                   </div>
