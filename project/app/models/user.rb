@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   has_secure_password
-  attr_accessor :avatar
+  # attr_accessor :avatar
+  has_one_attached :avatar
   before_create { generate_token(:remember_token)}
   before_save { self.email = email.downcase }
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
@@ -14,7 +15,7 @@ class User < ApplicationRecord
   validates :password, presence: true, length: { minimum: 8 }, format: { with: VALID_PASSWORD_REGEX }, allow_nil: true
   # validates :city, presence: true, uniqueness: true
   # validates :intro, presence: true, uniqueness: true
-  mount_uploader :avatar, AvatarUploader
+  # mount_uploader :avatar, AvatarUploader
   has_many :articles
   has_many :comments
 
