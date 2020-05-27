@@ -28960,3 +28960,104 @@ les"[0m
 Completed 200 OK in 167ms (Views: 156.7ms | ActiveRecord: 2.7ms)
 
 
+Completed 200 OK in 203ms (Views: 190.9ms | ActiveRecord: 1.8ms)
+
+
+ms)
+"[0m
+les"[0m
+"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "diwh7jPvLeN42klF19mImg"], ["LIMIT", 1]]
+ERED]", "commit"=>"Login"}
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                ECT "users".* FROM "users"[0m
+  ↳ app/views/articles/index.html.erb:96
+  Rendered articles/index.html.erb within layouts/application (18.0ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 168ms (Views: 159.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/login" for 10.0.2.2 at 2020-05-27 08:51:28 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (10.7ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 154ms (Views: 146.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 10.0.2.2 at 2020-05-27 08:51:31 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MxLHKwCKXjtWfQ3ilDjEoHIp2YaNRapF5q1sAkNq+3Y0yKQ03ipzgIsr95Xf+nB4+Cun8YQuWA7NFw5TzEE6TA==", "username"=>"RAD2020", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "RAD2020"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6
+Redirected to http://localhost:3000/
+Completed 302 Found in 243ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 10.0.2.2 at 2020-05-27 08:51:31 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#index as HTML
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT DISTINCT "articles"."topic" FROM "articles"[0m
+  ↳ app/controllers/articles_controller.rb:6
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "diwh7jPvLeN42klF19mImg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:33
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/articles/index.html.erb:96
+  Rendered articles/index.html.erb within layouts/application (21.4ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 203ms (Views: 190.9ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/users/3/edit" for 10.0.2.2 at 2020-05-27 09:00:55 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/vagrant/.rvm/gems/ruby-2.5.7/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:69
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:23
+  Rendering users/edit.html.erb within layouts/application
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."user_id" = $1[0m  [["user_id", 3]]
+  ↳ app/views/users/edit.html.erb:40
+  [1m[36mComment Load (0.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 3]]
+  ↳ app/views/users/edit.html.erb:51
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = $1[0m  [["article_id", 8]]
+  ↳ app/views/users/edit.html.erb:110
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = $1[0m  [["article_id", 9]]
+  ↳ app/views/users/edit.html.erb:110
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = $1[0m  [["article_id", 10]]
+  ↳ app/views/users/edit.html.erb:110
+  Rendered users/edit.html.erb within layouts/application (87.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "diwh7jPvLeN42klF19mImg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendered layouts/_header.html.erb (3.5ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 919ms (Views: 859.3ms | ActiveRecord: 12.8ms)
+
+
+Started GET "/articles" for 10.0.2.2 at 2020-05-27 09:00:59 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#index as HTML
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT DISTINCT "articles"."topic" FROM "articles"[0m
+  ↳ app/controllers/articles_controller.rb:6
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "diwh7jPvLeN42klF19mImg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:33
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/articles/index.html.erb:96
+  Rendered articles/index.html.erb within layouts/application (24.8ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 172ms (Views: 158.8ms | ActiveRecord: 3.4ms)
+
+
