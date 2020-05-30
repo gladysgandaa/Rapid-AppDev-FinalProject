@@ -1,7 +1,12 @@
   <div class="row">
     <div class="col-md-12 user-details">
       <div class="col-md-12">
-          <% user_avatar @user %>
+            <% if @user.avatar.attached? %>
+                <%= image_tag(@user.avatar) %>
+            <% else %>
+                <img class="dropbtn" src="https://cdn3.f-cdn.com/contestentries/1376995/30494909/5b566bc71d308_thumb900.jpg"
+                alt="Flowers in Chania" href="">
+            <% end %>
           <div class="col-md-12 col-sm-12 uname">
             <%= @user.username %>
           </div>

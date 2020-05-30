@@ -66,8 +66,7 @@
                                 <div class="article-content"
                                 >
                                     <div class="imageholder">
-                                        <img src="https://cdn3.f-cdn.com/contestentries/1376995/30494909/5b566bc71d308_thumb900.jpg"
-                                            alt="Flowers in Chania">
+  
                                     </div>
                                     <article>
                                         <p class="article-title"><%= link_to article.title, article_path(article), class: "news-title" %></p>
@@ -97,8 +96,12 @@
                       <% @users.each do |user| %>
                       <div class="member-content col-md-3">
                           <div class="imageholder">
-                              <img src="https://cdn3.f-cdn.com/contestentries/1376995/30494909/5b566bc71d308_thumb900.jpg"
-                                  alt="Flowers in Chania">
+                                <% if user.avatar.attached? %>
+                                    <%= image_tag(user.avatar) %>
+                                <% else %>
+                                    <img class="dropbtn" src="https://cdn3.f-cdn.com/contestentries/1376995/30494909/5b566bc71d308_thumb900.jpg"
+                                    alt="Flowers in Chania" href="">
+                                <% end %>
                               <figcaption class="member-uname"><%= link_to user.username, user %></figcaption>
                           </div>
                       </div>
@@ -109,7 +112,7 @@
                     <h2 class="small-header">Topics</h2>
                     <% @topics.each do |topic| %>
                       <% if topic != '-' %>
-                      <button><%= link_to topic, "", id: topic, data: {'js-toggle-topic' => true, 'topic' => topic} %>
+                      <button class="topic-button"><%= link_to topic, "", id: topic, data: {'js-toggle-topic' => true, 'topic' => topic} %>
                       </button>
                       <% end %>
                     <% end %>

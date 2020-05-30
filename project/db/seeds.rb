@@ -9,7 +9,7 @@
 
 user = User.create([{ username: 'Bob', email: 'bob@email.com', city: 'Melbourne', password: 'password123', password_confirmation: 'password123', mobile: '0490175046' }])
 user = User.create([{ username: 'Geoffrey', city: 'Michigan', email: 'geoffrey@email.com', password: 'password123', password_confirmation: 'password123', mobile: '0400000000' }])
-user = User.create([{ username: 'RAD2020', email: 'rad@email.com', city: 'Texas', password: 'Rails2020', password_confirmation: 'Rails2020', mobile: '0400123456' }])
+user = User.create([{ username: 'RAD', email: 'rad@email.com', city: 'Texas', password: 'Rails2020', password_confirmation: 'Rails2020', mobile: '0400123456' }])
 article = Article.create([{ title: 'A Seed Article', text: 'This article is automatically seeded when you run the rails db:seed command', topic: 'AI', user_id: '1', user: 'Bob', viewcount: '0', commentcount: '0'}])
 article = Article.create([{ title: 'Virtual Reality is exciting.', text: 'This is an article about virtual reality, which is fun.', topic: 'VR', user_id: '2', user: 'Geoffrey', viewcount: '0', commentcount: '0'}])
 article = Article.create([{ title: 'RMIT now has a Machine Learning club?', text: 'Does it? IDK', topic: 'ML', user_id: '1', user: 'Bob', viewcount: '0', commentcount: '0'}])

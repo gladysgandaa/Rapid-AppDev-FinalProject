@@ -17,7 +17,7 @@ article{
   margin-top: 1rem;
 }
 
-#VR, #AI, #RMIT, #Rails, #ML{
+.topic-button a{
   color: orange;
 }
 
@@ -100,6 +100,12 @@ article{
   padding: 2rem !important;
 }
 
+.recent-members img{
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+}
+
 .member-content{
   display:flex;
   flex-flow:row nowrap;
@@ -107,7 +113,7 @@ article{
 }
 
 .member-uname{
-  font-size: 10px;
+  font-size: 12px !important;
   text-align: center;
 }
 
