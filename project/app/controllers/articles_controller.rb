@@ -2,6 +2,11 @@ class ArticlesController < ApplicationController
     
   def index
       @articles = Article.all
+      if params[:search]
+        @articles = Article.search(params[:search]).order("created_at DESC")
+      else
+        @artciels = Article.all.order("created_at DESC")
+      end
       @users = User.all
       @topics = Article.distinct.pluck(:topic)
   end

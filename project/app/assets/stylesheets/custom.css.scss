@@ -105,13 +105,18 @@ button:hover{
   margin-top: 10px;
 }
 
-.user-icon img, .comment-section img, .imageholder img{
+.user-icon img, .imageholder img{
   border-radius: 50%;
   float: right;
   height: 40px !important;
   width: 40px !important;
 }
 
+.comment-section img{
+  border-radius: 50%;
+  height: 40px !important;
+  width: 40px !important;
+}
 
 
 .dropbtn {
@@ -557,4 +562,19 @@ height: 500px;
   height: 200px;
   width: 250px;
   padding: 20px;
+}
+
+/*Search bar */
+.search-bar #search{
+  margin: 15px !important;
+}
+
+.search-button{
+  height: 32px !important;
+  margin-top: 15px;
+}
+
+.blank-text{
+  padding-top: 15%;
+  text-align: center;
 }
