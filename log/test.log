@@ -1,0 +1,143 @@
+  [1m[35m (108.3ms)[0m  [1m[35mDROP DATABASE IF EXISTS "app_test"[0m
+  [1m[35m (1485.2ms)[0m  [1m[35mCREATE DATABASE "app_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_attachments" CASCADE[0m
+  [1m[35m (4.5ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" bigserial primary key, "name" character varying NOT NULL, "record_type" character varying NOT NULL, "record_id" bigint NOT NULL, "blob_id" bigint NOT NULL, "created_at" timestamp NOT NULL)[0m
+  [1m[35m (30.9ms)[0m  [1m[35mCREATE  INDEX  "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments"  ("blob_id")[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_active_storage_attachments_uniqueness" ON "active_storage_attachments"  ("record_type", "record_id", "name", "blob_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_blobs" CASCADE[0m
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" bigserial primary key, "key" character varying NOT NULL, "filename" character varying NOT NULL, "content_type" character varying, "metadata" text, "byte_size" bigint NOT NULL, "checksum" character varying NOT NULL, "created_at" timestamp NOT NULL)[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_active_storage_blobs_on_key" ON "active_storage_blobs"  ("key")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "articles" CASCADE[0m
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE TABLE "articles" ("id" bigserial primary key, "title" character varying, "text" text, "topic" character varying, "user" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "user_id" bigint, "viewcount" integer, "commentcount" integer)[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE  INDEX  "index_articles_on_user_id" ON "articles"  ("user_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "comments" CASCADE[0m
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE TABLE "comments" ("id" bigserial primary key, "commenter" character varying, "body" text, "article_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "user_id" bigint)[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE  INDEX  "index_comments_on_article_id" ON "comments"  ("article_id")[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE  INDEX  "index_comments_on_user_id" ON "comments"  ("user_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying, "password_digest" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "username" character varying, "mobile" character varying, "remember_token" character varying, "city" character varying, "intro" character varying, "avatar" character varying, "reset_digest" character varying, "reset_sent_at" timestamp)[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  [1m[35m (1.6ms)[0m  [1m[35mALTER TABLE "active_storage_attachments" ADD CONSTRAINT "fk_rails_c3b3935057"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+[0m
+  [1m[35m (1.3ms)[0m  [1m[35mALTER TABLE "comments" ADD CONSTRAINT "fk_rails_3bf61a60d3"
+FOREIGN KEY ("article_id")
+  REFERENCES "articles" ("id")
+ ON DELETE CASCADE[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20200528121414)[0m
+  [1m[35m (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20200415000446),
+(20200415035056),
+(20200416005423),
+(20200416021120),
+(20200505075857),
+(20200505080146),
+(20200505120303),
+(20200507091301),
+(20200514145516),
+(20200514174713),
+(20200526094233);
+
+[0m
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "test"], ["created_at", "2020-05-30 08:17:12.539154"], ["updated_at", "2020-05-30 08:17:12.539154"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "active_storage_blobs" DISABLE TRIGGER ALL;ALTER TABLE "active_storage_attachments" DISABLE TRIGGER ALL;ALTER TABLE "articles" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "comments" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixtures Load (1.8ms)[0m  [1m[31mDELETE FROM "articles";
+DELETE FROM "comments";
+DELETE FROM "users";
+INSERT INTO "articles" ("id", "title", "text", "topic", "user", "created_at", "updated_at", "user_id", "viewcount", "commentcount") VALUES (980190962, 'MyString', 'MyText', 'MyString', 'MyString', '2020-05-30 08:17:13.118303', '2020-05-30 08:17:13.118303', DEFAULT, DEFAULT, DEFAULT), (298486374, 'MyString', 'MyText', 'MyString', 'MyString', '2020-05-30 08:17:13.118303', '2020-05-30 08:17:13.118303', DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO "comments" ("id", "commenter", "body", "article_id", "created_at", "updated_at", "user_id") VALUES (980190962, 'MyString', 'MyText', 980190962, '2020-05-30 08:17:13.125296', '2020-05-30 08:17:13.125296', DEFAULT), (298486374, 'MyString', 'MyText', 298486374, '2020-05-30 08:17:13.125296', '2020-05-30 08:17:13.125296', DEFAULT);
+INSERT INTO "users" ("id", "email", "password_digest", "created_at", "updated_at", "username", "mobile", "remember_token", "city", "intro", "avatar", "reset_digest", "reset_sent_at") VALUES (980190962, 'MyString', '$2a$12$HvzvoImuxVcT6v.V2MimWurivAI0oWih8O5J/4VrM08wkQV./wM2W', '2020-05-30 08:17:13.130246', '2020-05-30 08:17:13.130246', DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT), (298486374, 'MyString', '$2a$12$IVwksFVhT9ot.aQ2ZJni5eAD7avuIiB4gMktEhAZNun2HtwGwX6OK', '2020-05-30 08:17:13.130246', '2020-05-30 08:17:13.130246', DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT)[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "active_storage_blobs" DISABLE TRIGGER ALL;ALTER TABLE "active_storage_attachments" DISABLE TRIGGER ALL;ALTER TABLE "articles" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "comments" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixtures Load (1.5ms)[0m  [1m[31mDELETE FROM "articles";
+DELETE FROM "comments";
+DELETE FROM "users";
+INSERT INTO "articles" ("id", "title", "text", "topic", "user", "created_at", "updated_at", "user_id", "viewcount", "commentcount") VALUES (980190962, 'MyString', 'MyText', 'MyString', 'MyString', '2020-05-30 08:17:13.838792', '2020-05-30 08:17:13.838792', DEFAULT, DEFAULT, DEFAULT), (298486374, 'MyString', 'MyText', 'MyString', 'MyString', '2020-05-30 08:17:13.838792', '2020-05-30 08:17:13.838792', DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO "comments" ("id", "commenter", "body", "article_id", "created_at", "updated_at", "user_id") VALUES (980190962, 'MyString', 'MyText', 980190962, '2020-05-30 08:17:13.841296', '2020-05-30 08:17:13.841296', DEFAULT), (298486374, 'MyString', 'MyText', 298486374, '2020-05-30 08:17:13.841296', '2020-05-30 08:17:13.841296', DEFAULT);
+INSERT INTO "users" ("id", "email", "password_digest", "created_at", "updated_at", "username", "mobile", "remember_token", "city", "intro", "avatar", "reset_digest", "reset_sent_at") VALUES (980190962, 'MyString', '$2a$12$.j9evlp035XWYaKY6KsIk.llM3KdB08TDjsh7UwWNgQEqULTVMeLq', '2020-05-30 08:17:13.842685', '2020-05-30 08:17:13.842685', DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT), (298486374, 'MyString', '$2a$12$k2uLGeOkG.2V/LrZ0xB8feyVdRHKHZslEzxPbGrwkaJUrB1h4mmaa', '2020-05-30 08:17:13.842685', '2020-05-30 08:17:13.842685', DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "active_storage_blobs" DISABLE TRIGGER ALL;ALTER TABLE "active_storage_attachments" DISABLE TRIGGER ALL;ALTER TABLE "articles" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "comments" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixtures Load (1.9ms)[0m  [1m[31mDELETE FROM "articles";
+DELETE FROM "comments";
+DELETE FROM "users";
+INSERT INTO "articles" ("id", "title", "text", "topic", "user", "created_at", "updated_at", "user_id", "viewcount", "commentcount") VALUES (980190962, 'MyString', 'MyText', 'MyString', 'MyString', '2020-05-30 08:17:14.294938', '2020-05-30 08:17:14.294938', DEFAULT, DEFAULT, DEFAULT), (298486374, 'MyString', 'MyText', 'MyString', 'MyString', '2020-05-30 08:17:14.294938', '2020-05-30 08:17:14.294938', DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO "comments" ("id", "commenter", "body", "article_id", "created_at", "updated_at", "user_id") VALUES (980190962, 'MyString', 'MyText', 980190962, '2020-05-30 08:17:14.296710', '2020-05-30 08:17:14.296710', DEFAULT), (298486374, 'MyString', 'MyText', 298486374, '2020-05-30 08:17:14.296710', '2020-05-30 08:17:14.296710', DEFAULT);
+INSERT INTO "users" ("id", "email", "password_digest", "created_at", "updated_at", "username", "mobile", "remember_token", "city", "intro", "avatar", "reset_digest", "reset_sent_at") VALUES (980190962, 'MyString', '$2a$12$PCPol2IDb1cctEnVT5PwIuLfqJfmHBxLmQtrBtbQqyURL8qrJ9mC.', '2020-05-30 08:17:14.298784', '2020-05-30 08:17:14.298784', DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT), (298486374, 'MyString', '$2a$12$fVQl5HsDLloNsVYwUq8VjuDer0UCbSRv2o5nz3/jWS0Fi3d8Abwqu', '2020-05-30 08:17:14.298784', '2020-05-30 08:17:14.298784', DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "active_storage_blobs" DISABLE TRIGGER ALL;ALTER TABLE "active_storage_attachments" DISABLE TRIGGER ALL;ALTER TABLE "articles" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "comments" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixtures Load (0.8ms)[0m  [1m[31mDELETE FROM "articles";
+DELETE FROM "comments";
+DELETE FROM "users";
+INSERT INTO "articles" ("id", "title", "text", "topic", "user", "created_at", "updated_at", "user_id", "viewcount", "commentcount") VALUES (980190962, 'MyString', 'MyText', 'MyString', 'MyString', '2020-05-30 08:17:14.763862', '2020-05-30 08:17:14.763862', DEFAULT, DEFAULT, DEFAULT), (298486374, 'MyString', 'MyText', 'MyString', 'MyString', '2020-05-30 08:17:14.763862', '2020-05-30 08:17:14.763862', DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO "comments" ("id", "commenter", "body", "article_id", "created_at", "updated_at", "user_id") VALUES (980190962, 'MyString', 'MyText', 980190962, '2020-05-30 08:17:14.765779', '2020-05-30 08:17:14.765779', DEFAULT), (298486374, 'MyString', 'MyText', 298486374, '2020-05-30 08:17:14.765779', '2020-05-30 08:17:14.765779', DEFAULT);
+INSERT INTO "users" ("id", "email", "password_digest", "created_at", "updated_at", "username", "mobile", "remember_token", "city", "intro", "avatar", "reset_digest", "reset_sent_at") VALUES (980190962, 'MyString', '$2a$12$qai8iksSZg5t58caJo7m4.DK8qZjtdPeXSRq9jIK7qT5PG7AuRxWW', '2020-05-30 08:17:14.767803', '2020-05-30 08:17:14.767803', DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT), (298486374, 'MyString', '$2a$12$rymNPppnmHZ3IYpGW5sYUOdcOwh/VUqlb7Flr7uaV2GOxKEtT8SQG', '2020-05-30 08:17:14.767803', '2020-05-30 08:17:14.767803', DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "active_storage_blobs" DISABLE TRIGGER ALL;ALTER TABLE "active_storage_attachments" DISABLE TRIGGER ALL;ALTER TABLE "articles" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "comments" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixtures Load (1.5ms)[0m  [1m[31mDELETE FROM "articles";
+DELETE FROM "comments";
+DELETE FROM "users";
+INSERT INTO "articles" ("id", "title", "text", "topic", "user", "created_at", "updated_at", "user_id", "viewcount", "commentcount") VALUES (980190962, 'MyString', 'MyText', 'MyString', 'MyString', '2020-05-30 08:22:32.044645', '2020-05-30 08:22:32.044645', DEFAULT, DEFAULT, DEFAULT), (298486374, 'MyString', 'MyText', 'MyString', 'MyString', '2020-05-30 08:22:32.044645', '2020-05-30 08:22:32.044645', DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO "comments" ("id", "commenter", "body", "article_id", "created_at", "updated_at", "user_id") VALUES (980190962, 'MyString', 'MyText', 980190962, '2020-05-30 08:22:32.052169', '2020-05-30 08:22:32.052169', DEFAULT), (298486374, 'MyString', 'MyText', 298486374, '2020-05-30 08:22:32.052169', '2020-05-30 08:22:32.052169', DEFAULT);
+INSERT INTO "users" ("id", "email", "password_digest", "created_at", "updated_at", "username", "mobile", "remember_token", "city", "intro", "avatar", "reset_digest", "reset_sent_at") VALUES (980190962, 'MyString', '$2a$12$/Ss3cozliGeE1wI6m9h.1e8JsjA1xA1rxq8ps0sJjFz3izecrqofu', '2020-05-30 08:22:32.057646', '2020-05-30 08:22:32.057646', DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT), (298486374, 'MyString', '$2a$12$ASh8kkXbHE60Gjo8zZjbC.11i7IVjAHsLiJT9cad3J4OAhRQ1m20S', '2020-05-30 08:22:32.057646', '2020-05-30 08:22:32.057646', DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT)[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "active_storage_blobs" DISABLE TRIGGER ALL;ALTER TABLE "active_storage_attachments" DISABLE TRIGGER ALL;ALTER TABLE "articles" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "comments" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixtures Load (0.7ms)[0m  [1m[31mDELETE FROM "articles";
+DELETE FROM "comments";
+DELETE FROM "users";
+INSERT INTO "articles" ("id", "title", "text", "topic", "user", "created_at", "updated_at", "user_id", "viewcount", "commentcount") VALUES (980190962, 'MyString', 'MyText', 'MyString', 'MyString', '2020-05-30 08:22:32.640794', '2020-05-30 08:22:32.640794', DEFAULT, DEFAULT, DEFAULT), (298486374, 'MyString', 'MyText', 'MyString', 'MyString', '2020-05-30 08:22:32.640794', '2020-05-30 08:22:32.640794', DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO "comments" ("id", "commenter", "body", "article_id", "created_at", "updated_at", "user_id") VALUES (980190962, 'MyString', 'MyText', 980190962, '2020-05-30 08:22:32.642938', '2020-05-30 08:22:32.642938', DEFAULT), (298486374, 'MyString', 'MyText', 298486374, '2020-05-30 08:22:32.642938', '2020-05-30 08:22:32.642938', DEFAULT);
+INSERT INTO "users" ("id", "email", "password_digest", "created_at", "updated_at", "username", "mobile", "remember_token", "city", "intro", "avatar", "reset_digest", "reset_sent_at") VALUES (980190962, 'MyString', '$2a$12$qWmdmhkHDrQb/m.dPxmfeON3enxAmw68/SQNYuenlK7EiSGUayLdi', '2020-05-30 08:22:32.644703', '2020-05-30 08:22:32.644703', DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT), (298486374, 'MyString', '$2a$12$begooYbrkS6HI5Pjn2CWHOI/ugGSGijlFDxznjIrD0vEmNROWa866', '2020-05-30 08:22:32.644703', '2020-05-30 08:22:32.644703', DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "active_storage_blobs" DISABLE TRIGGER ALL;ALTER TABLE "active_storage_attachments" DISABLE TRIGGER ALL;ALTER TABLE "articles" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "comments" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixtures Load (0.8ms)[0m  [1m[31mDELETE FROM "articles";
+DELETE FROM "comments";
+DELETE FROM "users";
+INSERT INTO "articles" ("id", "title", "text", "topic", "user", "created_at", "updated_at", "user_id", "viewcount", "commentcount") VALUES (980190962, 'MyString', 'MyText', 'MyString', 'MyString', '2020-05-30 08:22:33.096527', '2020-05-30 08:22:33.096527', DEFAULT, DEFAULT, DEFAULT), (298486374, 'MyString', 'MyText', 'MyString', 'MyString', '2020-05-30 08:22:33.096527', '2020-05-30 08:22:33.096527', DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO "comments" ("id", "commenter", "body", "article_id", "created_at", "updated_at", "user_id") VALUES (980190962, 'MyString', 'MyText', 980190962, '2020-05-30 08:22:33.098276', '2020-05-30 08:22:33.098276', DEFAULT), (298486374, 'MyString', 'MyText', 298486374, '2020-05-30 08:22:33.098276', '2020-05-30 08:22:33.098276', DEFAULT);
+INSERT INTO "users" ("id", "email", "password_digest", "created_at", "updated_at", "username", "mobile", "remember_token", "city", "intro", "avatar", "reset_digest", "reset_sent_at") VALUES (980190962, 'MyString', '$2a$12$/51XTITHKMVCpKxxn.ewC.mcVUc3PA59iKOQ0Vu3nwT4Ij4hgHGlK', '2020-05-30 08:22:33.099734', '2020-05-30 08:22:33.099734', DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT), (298486374, 'MyString', '$2a$12$nWhG3z.yI07CiQnNjAMohe26juQDW7/jpkBoE6a44VcmuwVEouNVa', '2020-05-30 08:22:33.099734', '2020-05-30 08:22:33.099734', DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT)[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "active_storage_blobs" DISABLE TRIGGER ALL;ALTER TABLE "active_storage_attachments" DISABLE TRIGGER ALL;ALTER TABLE "articles" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "comments" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixtures Load (1.1ms)[0m  [1m[31mDELETE FROM "articles";
+DELETE FROM "comments";
+DELETE FROM "users";
+INSERT INTO "articles" ("id", "title", "text", "topic", "user", "created_at", "updated_at", "user_id", "viewcount", "commentcount") VALUES (980190962, 'MyString', 'MyText', 'MyString', 'MyString', '2020-05-30 08:22:33.554709', '2020-05-30 08:22:33.554709', DEFAULT, DEFAULT, DEFAULT), (298486374, 'MyString', 'MyText', 'MyString', 'MyString', '2020-05-30 08:22:33.554709', '2020-05-30 08:22:33.554709', DEFAULT, DEFAULT, DEFAULT);
+INSERT INTO "comments" ("id", "commenter", "body", "article_id", "created_at", "updated_at", "user_id") VALUES (980190962, 'MyString', 'MyText', 980190962, '2020-05-30 08:22:33.556607', '2020-05-30 08:22:33.556607', DEFAULT), (298486374, 'MyString', 'MyText', 298486374, '2020-05-30 08:22:33.556607', '2020-05-30 08:22:33.556607', DEFAULT);
+INSERT INTO "users" ("id", "email", "password_digest", "created_at", "updated_at", "username", "mobile", "remember_token", "city", "intro", "avatar", "reset_digest", "reset_sent_at") VALUES (980190962, 'MyString', '$2a$12$eDM60O1x4c5aEKsjWpW.H.jrYZpTuHNDEyZeNNEzamCFsnrt1Oup6', '2020-05-30 08:22:33.557979', '2020-05-30 08:22:33.557979', DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT), (298486374, 'MyString', '$2a$12$4xqZofOVHhGy/poaMUBtr.jS6wVyVLJ7eAmlVBHz22xMKZNxunwuS', '2020-05-30 08:22:33.557979', '2020-05-30 08:22:33.557979', DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT)[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
