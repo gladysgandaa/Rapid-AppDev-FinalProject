@@ -1,1 +1,1 @@
-{"virtualbox":{"/project":{"guestpath":"/project","hostpath":"C:/Users/HP/RAD-Project(user-authentication)/project","disabled":false,"__vagrantfile":true},"/vagrant":{"guestpath":"/vagrant","hostpath":"C:/Users/HP/RAD-Project(user-authentication)","disabled":false,"__vagrantfile":true}}}
+{"virtualbox":{"/project":{"guestpath":"/project","hostpath":"C:/Users/HP/Desktop/RAD-Project(NEWEST)/project","disabled":false,"__vagrantfile":true},"/vagrant":{"guestpath":"/vagrant","hostpath":"C:/Users/HP/Desktop/RAD-Project(NEWEST)","disabled":false,"__vagrantfile":true}}}
