@@ -36,8 +36,16 @@
                                 <div class="<%= article.topic %>">
                                     <div class="article-content">
                                         <div class="imageholder">
-                                            <img src="https://cdn3.f-cdn.com/contestentries/1376995/30494909/5b566bc71d308_thumb900.jpg"
-                                                alt="Flowers in Chania">
+                                            <% @users.each do |user| %>
+                                                <% if user.id == article.user_id %>
+                                                    <% if user.avatar.attached? %>
+                                                        <%= image_tag(user.avatar) %>
+                                                    <% else %>
+                                                        <img class="dropbtn" src="https://cdn3.f-cdn.com/contestentries/1376995/30494909/5b566bc71d308_thumb900.jpg"
+                                                        alt="Flowers in Chania" href="">
+                                                    <% end %>
+                                                <% end %>
+                                            <% end %>
                                         </div>
                                         <article>
                                             <p class="article-title"><%= link_to article.title, article_path(article), class: "news-title" %></p>
@@ -66,7 +74,16 @@
                                 <div class="article-content"
                                 >
                                     <div class="imageholder">
-  
+                                    <% @users.each do |user| %>
+                                        <% if user.id == article.user_id %>
+                                            <% if user.avatar.attached? %>
+                                                <%= image_tag(user.avatar) %>
+                                            <% else %>
+                                                <img class="dropbtn" src="https://cdn3.f-cdn.com/contestentries/1376995/30494909/5b566bc71d308_thumb900.jpg"
+                                                alt="Flowers in Chania" href="">
+                                            <% end %>
+                                        <% end %>
+                                    <% end %>
                                     </div>
                                     <article>
                                         <p class="article-title"><%= link_to article.title, article_path(article), class: "news-title" %></p>
