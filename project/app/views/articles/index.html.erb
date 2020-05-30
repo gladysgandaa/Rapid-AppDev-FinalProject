@@ -40,15 +40,15 @@
                                                 alt="Flowers in Chania">
                                         </div>
                                         <article>
-                                            <p class="article-title"><%= link_to article.title, article_path(article) %></p>
+                                            <p class="article-title"><%= link_to article.title, article_path(article), class: "news-title" %></p>
                                             <span class="subtext"><%= link_to article.user, user_path(article.user_id) %></span>
                                             <span class="subtext"><%= article.created_at.to_formatted_s(:long) %></span>
                                             <span class="subtext"><%= article.topic %></span>
                                             <span class="subtext"><%= link_to 'View Article', article_path(article) %></span>
                                             <span class="subtext">Views: <%= article.viewcount %></span>
                                             <span class="subtext">Comments: <%= article.commentcount %></span>
-                                            <li><%= article.title %>
-                                                <%= link_to "Hide", "hide", data: {'js-hide-link' => true} %></li>
+                                            <%# <li>= article.title %>
+                                                <%# = link_to "Hide", "hide", data: {'js-hide-link' => true}</li> %>
                                         </article>
                                     </div>
                                 </div>
@@ -69,15 +69,15 @@
                                             alt="Flowers in Chania">
                                     </div>
                                     <article>
-                                        <p class="article-title"><%= link_to article.title, article_path(article) %></p>
+                                        <p class="article-title"><%= link_to article.title, article_path(article), class: "news-title" %></p>
                                         <span class="subtext"><%= link_to article.user, user_path(article.user_id) %></span>
                                         <span class="subtext"><%= article.created_at.to_formatted_s(:long) %></span>
                                         <span class="subtext"><%= article.topic %></span>
                                         <span class="subtext"><%= link_to 'View Article', article_path(article) %></span>
                                         <span class="subtext">Views: <%= article.viewcount %></span>
                                         <span class="subtext">Comments: <%= article.commentcount %></span>
-                                        <li><%= article.title %>
-                                            <%= link_to "Hide", "hide", data: {'js-hide-link' => true} %></li>
+                                        <%# <li>= article.title %>
+                                            <%# = link_to "Hide", "hide", data: {'js-hide-link' => true}</li> %>
                                     </article>
                                 </div>
                             <% end %>
@@ -98,7 +98,7 @@
                           <div class="imageholder">
                               <img src="https://cdn3.f-cdn.com/contestentries/1376995/30494909/5b566bc71d308_thumb900.jpg"
                                   alt="Flowers in Chania">
-                              <figcaption class="member-uname"><%= user.username %></figcaption>
+                              <figcaption class="member-uname"><%= link_to user.username, user %></figcaption>
                           </div>
                       </div>
 
@@ -110,8 +110,10 @@
                       <h2 class="small-header">Topics</h2>
                       <% @topics.each do |topic| %>
                       <% if topic != '-' %>
+                    <div class="col-md-4">
                       <li><%= link_to topic, "", class: 'button', data: {'js-toggle-topic' => true, 'topic' => topic} %>
                       </li>
+                    </div>
                       <% end %>
                       <% end %>
                   </div>

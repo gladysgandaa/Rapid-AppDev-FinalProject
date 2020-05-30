@@ -238,6 +238,10 @@ input {
     background-color: unset !important;
 }
 
+.user-articles{
+  height: unset !important;
+}
+
 #user-profile 
 .user-articles, 
 .user-comments{
@@ -245,7 +249,6 @@ input {
     padding: 0 !important;
     margin: 10px;
     background-color: white;
-    height: unset !important;
 }
 
 #user-post .user-articles{
@@ -259,6 +262,10 @@ input {
 #user-edit input[type=submit]{
   width: 39%;
   margin-left: 26%;
+}
+
+.news-title:hover{
+    color: orange !important;
 }
 
 
@@ -507,5 +514,28 @@ height: 500px;
 
   .comment-user{
     display: inline-block;
+  }
+}
+
+
+.topics li {
+  list-style: none !important;
+}
+
+
+/* ERROR MESSAGE */
+
+#error_explanation{
+  color:red;
+  ul{
+    color: red;
+    margin: 0 0 30px 0;
+  }
+}
+
+.field_with_errors{
+  @extend .has-error;
+  .form-control{
+    color: $state-danger-text;
   }
 }

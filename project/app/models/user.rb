@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  attr_accessor :reset_token
   has_secure_password
   # attr_accessor :avatar
   has_one_attached :avatar
@@ -19,9 +20,42 @@ class User < ApplicationRecord
   has_many :articles
   has_many :comments
 
+  def User.digest(string)
+    cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
+                                                  BCrypt::Engine.cost
+    BCrypt::Password.create(string, cost:cost)
+  end
+
+  def User.new_token
+    SecureRandom.urlsafe_base64
+  end
+
+  def self.new_token
+    SecureRandom.urlsafe_base64
+  end
+
+  def password_reset_expired?
+    reset_sent_at < 2.hours.ago
+  end
+
+  def authenticated?(remember_token)
+    BCrypt::Password.new(remember_digest).is_password?(remember_token)
+  end
+
+  def create_reset_digest
+    self.reset_token = User.new_token
+    update_attribute(:reset_digest, User.digest(reset_token))
+    update_attribute(:reset_sent_at, Time.zone.now)
+  end
+  
+  def send_password_reset_email
+    UserMailer.password_reset(self).deliver_now
+  end
+
   def generate_token(column)
     begin 
       self[column] = SecureRandom.urlsafe_base64
     end while User.exists?(column => self[column])
   end
 end
+

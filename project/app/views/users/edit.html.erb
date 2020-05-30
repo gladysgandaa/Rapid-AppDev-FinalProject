@@ -16,13 +16,13 @@
        <div class="row">
             <div class="col-md-12 user-details">
             <div class="col-md-12">
-                <%= form_for(@user, html: { multiport: true}) do |form| %>
-                    <% if @user.avatar.attached? %>
-                        <%= image_tag @user.avatar.variant(resize: "100x100!"), class: "rounded-circle" %> 
-                    <% else %>
-                        <%= image_tag gravatar_image_url(current_user.email, size: 40), height:20, width:20, class: 'rounded' %>
-                    <% end %>
-                <% end %>
+                <%#= form_for(@user, html: { multiport: true}) do |form| %>
+                    <%# <% if @user.avatar.attached? %> 
+                        <%# <%= image_tag @user.avatar.variant(resize: "100x100!"), class: "rounded-circle" %> 
+                    <%# <% else %> 
+                        <%# <%= image_tag gravatar_image_url(current_user.email, size: 40), height:20, width:20, class: 'rounded' %> 
+                    <%# <% end %> 
+                <%# <% end %>
                 <div class="col-md-12 col-sm-12 uname">
                     <%= @user.username %>
                 </div>
@@ -173,11 +173,11 @@
             <div id="user-avatar"> 
                 <%= form_for(@user, html: { multiport: true}) do |form| %>
                 
-                <% if @user.avatar.attached? %>
-                    <%= image_tag @user.avatar.variant(resize: "100x100!"), class: "rounded-circle" %> 
-                <% else %>
-                    <%= image_tag gravatar_image_url(current_user.email, size: 40), height:20, width:20, class: 'rounded' %>
-                <% end %>
+                <%# if @user.avatar.attached? %>
+                    <%#= image_tag @user.avatar.variant(resize: "100x100!"), class: "rounded-circle" %> 
+                <%# else %>
+                    <%#= image_tag gravatar_image_url(current_user.email, size: 40), height:20, width:20, class: 'rounded' %>
+                <%# end %>
 
                 <%= form.file_field :avatar %>
                 <div class="actions">

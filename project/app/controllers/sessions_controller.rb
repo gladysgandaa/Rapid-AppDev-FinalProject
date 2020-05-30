@@ -13,6 +13,7 @@ class SessionsController < ApplicationController
       flash[:success] = t('flash.session.create.success') + ", #{params[:username]}."
       redirect_to root_url
     else
+      flash.now[:error] = 'Invalid email/password combination'
       flash.now[:error] = t('flash.session.create.error')
       render 'new'
     end
