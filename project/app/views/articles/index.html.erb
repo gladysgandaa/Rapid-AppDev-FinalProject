@@ -106,16 +106,17 @@
                   </div>
 
                   <div class="topics col-md-12">
-                      <h2 class="small-header">Topics</h2>
-                      <% @topics.each do |topic| %>
-                        <% if topic != '-' %>
-                        <div class="col-md-4">
-                        <li><%= link_to topic, "", class: 'button', data: {'js-toggle-topic' => true, 'topic' => topic} %>
-                        </li>
-                        </div>
-                        <% end %>
+                    <h2 class="small-header">Topics</h2>
+                    <% @topics.each do |topic| %>
+                      <% if topic != '-' %>
+                      <button><%= link_to topic, "", id: topic, data: {'js-toggle-topic' => true, 'topic' => topic} %>
+                      </button>
                       <% end %>
-                  </div>
+                    <% end %>
+                </div>
+
+
+
 
                   <div class="post col-md-12">
                       <h2 class="small-header">Post</h2>
