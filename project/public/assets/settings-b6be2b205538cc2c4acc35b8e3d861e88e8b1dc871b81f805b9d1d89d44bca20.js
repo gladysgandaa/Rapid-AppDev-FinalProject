@@ -1,0 +1,1 @@
+var jq=jQuery.noConflict();jq(document).on("turbolinks:load",function(){$("a").on("click",function(){var n=$(this).attr("rel");$("#"+n).show().siblings("div").hide()}).trigger("load"),event.preventDefault()});
