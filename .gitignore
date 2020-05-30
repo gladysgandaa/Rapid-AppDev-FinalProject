@@ -2,3 +2,5 @@
 *.log
 Vagrantfile
 tmp/
+
+project/config/
