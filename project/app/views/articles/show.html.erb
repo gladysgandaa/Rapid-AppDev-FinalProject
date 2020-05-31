@@ -40,13 +40,13 @@
                <div class="article-text">
                   <%= @article.text %>
                </div>
-               <% if current_user.id == @article.user_id %>
-               <%= link_to 'Delete Article', article_path(@article.id),
-                     method: :delete,
-                     data: { confirm: 'Are you sure?' } %>
-                     <%= link_to 'View article', article_path(@article.id) %> 
-            <% end %>
                <% if current_user %>
+                  <% if current_user.id == @article.user_id %>
+                  <%= link_to 'Delete Article', article_path(@article.id),
+                        method: :delete,
+                        data: { confirm: 'Are you sure?' } %>
+                        <%= link_to 'View article', article_path(@article.id) %> 
+                  <% end %>
                <h4>Comments</h4>
                <hr>
                <%= form_with(model: [ @article, @article.comments.build ], local: true) do |form| %>
@@ -80,11 +80,14 @@
                      <%# <div class="comment-date"> <%= comment.created_at.to_formatted_s(:long) </div>  %>
                      <div class="comment-content"><%= comment.body %></div>
                      </div>
-                     <% if current_user.id == comment.user_id %>
-                     <%= link_to 'Delete Comment', article_comment_path(comment.article_id,comment.id),
-                           method: :delete,
-                           data: { confirm: 'Are you sure?' } %>        
-                  <% end %>
+                     <% if current_user %>
+                        <% if current_user.id == comment.user_id %>
+                        <%= link_to 'Delete Comment', article_comment_path(comment.article_id,comment.id),
+                              method: :delete,
+                              data: { confirm: 'Are you sure?' } %>        
+                        <% end %>
+                     <% end %>
+
                      
                   <% end %>
                </div>
