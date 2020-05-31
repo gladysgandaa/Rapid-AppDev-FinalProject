@@ -7,12 +7,23 @@
       <nav class="navbar-collapse col-md-7 col-sm-7">
         <ul class="nav navbar-nav navbar-centered">
           <li><%= link_to "Home", articles_path, class:"nav-list" %></li>
-            <li class="dropdown">
+          <div class="news-dropdown">
+            <button class="news-dropbtn">News <b class="caret"></b></button>
+            <div class="news-dropdown-content">
+              <% @posts = Article.order('viewcount DESC').limit(2) %>
+               <% @posts.each do |article| %>
+               <li><%= link_to article.topic, article_path(article)%></li>
+               <% end %>
+            </div>
+          </div>
+            <%# <li class="dropdown">
               <a href="#" class=" nav-list dropdown-toggle" data-toggle="dropdown"> News <b class="caret"></b></a>
-              <!-- <ul class="dropdown-menu" role="menu"> -->
+               <ul class="dropdown-menu" role="menu">Test </ul> %>
+               <div class="user-username">
                 <% if current_user %>
                   <li class="login-user"><%= current_user.username%></li>
                 <% end %>
+                </div>
               <!-- </ul> -->
 
         </ul>
