@@ -31602,16 +31602,18 @@ Processing by ArticlesController#index as HTML
 Completed 200 OK in 230ms (Views: 211.6ms | ActiveRecord: 5.6ms)
 
 
-Completed 304 Not Modified in 2ms (ActiveRecord: 0.0ms)
-
-
-=>"inline; filename=\"php.jpg\"; filename*=UTF-8''php.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRjVVpOZGpoTVpsWktOa00xUzFGeFZrTkJielpJVm01V0Jqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSTVhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGljR2h3TG1wd1p5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25jR2h3TG1wd1p3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lEMmx0WVdkbEwycHdaV2NHT3daVSIsImV4cCI6IjIwMjAtMDUtMzFUMDk6NTQ6NDUuMjQwWiIsInB1ciI6ImJsb2Jfa2V5In19--27fcbf846efffb09f3213b04a472a85989ddf380", "filename"=>"php"}
-g" for 10.0.2.2 at 2020-05-31 09:49:55 +0000
-:52 +0000
-cHVyIjoiYmxvYl9rZXkifX0=--64e22df723fa1902b98d158fe78ba1996ebced11", "filename"=>"cloud storage for firebase"}
-0firebase.png" for 10.0.2.2 at 2020-05-31 09:49:52 +0000
-2A%3DUTF-8%27%27cloud%2520storage%2520for%2520firebase.png)[0m
-                                                                                                                                                                      views/articles/index.html.erb:26
+Started GET "/" for 10.0.2.2 at 2020-05-31 09:49:38 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/vagrant/.rvm/gems/ruby-2.5.7/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by ArticlesController#index as HTML
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT DISTINCT "articles"."topic" FROM "articles"[0m
+  ↳ app/controllers/articles_controller.rb:11
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "LSc8dCJt6YXHYS1wLXJX3g"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mArticle Load (0.8ms)[0m  [1m[34mSELECT "articles".* FROM "articles" ORDER BY created_at DESC[0m
+  ↳ app/views/articles/index.html.erb:26
   [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
   ↳ app/views/articles/index.html.erb:38
   [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
