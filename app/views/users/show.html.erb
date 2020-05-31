@@ -24,12 +24,7 @@
                <% @user.articles.each do |article| %>
                <%= article.text %>
                <div class="article-time"><%= article.created_at.to_formatted_s(:long) %></div>
-               <% if current_user.id == article.user_id %>
-               <%= link_to 'Delete Article', article_path(article.id),
-                     method: :delete,
-                     data: { confirm: 'Are you sure?' } %>
                      <%= link_to 'View article', article_path(article.id) %> 
-            <% end %>
                <hr>
                <% end %>
             </li>
