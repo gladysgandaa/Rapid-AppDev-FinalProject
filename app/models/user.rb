@@ -3,6 +3,7 @@ class User < ApplicationRecord
   has_secure_password
   # attr_accessor :avatar
   has_one_attached :avatar
+  has_one_attached :studentid
   before_create { generate_token(:remember_token)}
   before_save { self.email = email.downcase }
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i

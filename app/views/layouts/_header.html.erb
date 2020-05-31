@@ -7,7 +7,6 @@
       <nav class="navbar-collapse col-md-7 col-sm-7">
         <ul class="nav navbar-nav navbar-centered">
           <li><%= link_to "Home", articles_path, class:"nav-list" %></li>
-          <li><%= link_to "Home", articles_path, class:"nav-list" %></li>
             <li class="dropdown">
               <a href="#" class=" nav-list dropdown-toggle" data-toggle="dropdown"> News <b class="caret"></b></a>
               <!-- <ul class="dropdown-menu" role="menu"> -->
@@ -20,8 +19,17 @@
       </nav>
       <div class="user-icon col-md-3 col-sm-3">
       <div class="dropdown">
-          <img class="dropbtn" src="https://cdn3.f-cdn.com/contestentries/1376995/30494909/5b566bc71d308_thumb900.jpg"
-            alt="Flowers in Chania" href="">
+          <% if current_user %>
+            <% if current_user.avatar.attached? %>
+              <%= image_tag(current_user.avatar) %>
+            <% else %>
+              <img class="dropbtn" src="https://cdn3.f-cdn.com/contestentries/1376995/30494909/5b566bc71d308_thumb900.jpg"
+              alt="Flowers in Chania" href="">
+            <% end %>
+          <% else %>
+              <img class="dropbtn" src="https://cdn3.f-cdn.com/contestentries/1376995/30494909/5b566bc71d308_thumb900.jpg"
+              alt="Flowers in Chania" href="">
+          <% end %>
           <div class="dropdown-content">
           <% if current_user %>
             <li><%= link_to "Sign out", logout_path, method: "delete" %></li>

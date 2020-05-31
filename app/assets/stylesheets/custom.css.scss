@@ -105,11 +105,19 @@ button:hover{
   margin-top: 10px;
 }
 
-.user-icon img{
+.user-icon img, .imageholder img{
   border-radius: 50%;
   float: right;
-  height: 40px;
+  height: 40px !important;
+  width: 40px !important;
 }
+
+.comment-section img{
+  border-radius: 50%;
+  height: 40px !important;
+  width: 40px !important;
+}
+
 
 .dropbtn {
   font-size: 16px;
@@ -538,4 +546,35 @@ height: 500px;
   .form-control{
     color: $state-danger-text;
   }
+}
+
+
+/* Verification */
+
+.avatar-image{ 
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  padding: 20px;
+}
+
+.studentid-image{
+  height: 200px;
+  width: 250px;
+  padding: 20px;
+}
+
+/*Search bar */
+.search-bar #search{
+  margin: 15px !important;
+}
+
+.search-button{
+  height: 32px !important;
+  margin-top: 15px;
+}
+
+.blank-text{
+  padding-top: 15%;
+  text-align: center;
 }
