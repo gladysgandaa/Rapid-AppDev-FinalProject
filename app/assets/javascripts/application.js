@@ -33,27 +33,29 @@ $(document).on('turbolinks:load', function() {
   });
 });
 
-$(document).on('turbolinks:load', function() {
-  $("[data-js-toggle-topic]").click(function (event) {
-    console.log($("#"+ event.currentTarget.getAttribute("data-topic")))
-    $("." + event.currentTarget.getAttribute("data-topic")).toggle();    
+jQuery(document).ready(function($){
+  $(document).on('turbolinks:load', function() {
+    $("[data-js-toggle-topic]").click(function (event) {
+      console.log($("#"+ event.currentTarget.getAttribute("data-topic")))
+      $("." + event.currentTarget.getAttribute("data-topic")).toggle();    
 
-    if($("#"+ event.currentTarget.getAttribute("data-topic")).css('color')==='rgb(255, 165, 0)')
-    {
-      console.log($("#"+ event.currentTarget.getAttribute("data-topic")).css('color'))
-      console.log('if')
-      $("#"+ event.currentTarget.getAttribute("data-topic")).css({
-      'color':'rgb(0, 0, 0)'
-      })
-    }
-    else {
-      console.log('else')
-      $("#"+ event.currentTarget.getAttribute("data-topic")).css({
-        'color':'rgb(255, 165, 0)'
-      })
-    }   
-    console.log("hiding: ." + event.currentTarget.getAttribute("data-topic"));
-    event.preventDefault();
+      if($("#"+ event.currentTarget.getAttribute("data-topic")).css('color')==='rgb(255, 165, 0)')
+      {
+        console.log($("#"+ event.currentTarget.getAttribute("data-topic")).css('color'))
+        console.log('if')
+        $("#"+ event.currentTarget.getAttribute("data-topic")).css({
+        'color':'rgb(0, 0, 0)'
+        })
+      }
+      else {
+        console.log('else')
+        $("#"+ event.currentTarget.getAttribute("data-topic")).css({
+          'color':'rgb(255, 165, 0)'
+        })
+      }   
+      console.log("hiding: ." + event.currentTarget.getAttribute("data-topic"));
+      event.preventDefault();
+    });
   });
 });
 
