@@ -5,7 +5,7 @@ class ArticlesController < ApplicationController
       if params[:search]
         @articles = Article.search(params[:search]).order("created_at DESC")
       else
-        @artciels = Article.all.order("created_at DESC")
+        @articles = Article.all.order("created_at DESC")
       end
       @users = User.all
       @topics = Article.distinct.pluck(:topic)
