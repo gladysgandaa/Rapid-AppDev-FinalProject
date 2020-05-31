@@ -5,6 +5,12 @@ Members:
 Highest level of attempt (HD 90+) 
 - News pull down menu and Comment deletion implemented 
 
+Github Repo
+
+Name: RAD2020_s3432636_s3679389
+
+Location: https://github.com/s3679389/RAD2020_s3432636_s3679389
+
 Heroku deployment url : http://rad-s3432636-s3679389.herokuapp.com/
 
 Last heroku deployment log 
@@ -114,7 +120,7 @@ Last heroku deployment log
 
 
 Gladys' Timesheet
-![Gladys_Timesheet](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png)
+![Gladys_Timesheet](https://github.com/s3679389/RAD2020_s3432636_s3679389/blob/submission/images/Gladys_Timesheet.JPG)
 
 Albert's Timesheet
-![Albert_Timesheet](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png)
+![Albert_Timesheet](https://github.com/s3679389/RAD2020_s3432636_s3679389/blob/submission/images/Albert_Timesheet.JPG)
