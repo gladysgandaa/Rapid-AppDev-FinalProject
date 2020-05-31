@@ -17,62 +17,62 @@
 //= require turbolinks
 //= require settings.js
 
-
-$( document ).on('turbolinks:load', function() {
-    console.log("It works on each visit!")
-  })
-
-$(document).on('turbolinks:load', function() {
-    $("#SelectedPosts").hide();
-  });
-
-$(document).on('turbolinks:load', function() {
-  $("[data-js-hide-link]").click(function (event) {
-    $(this).parents("li").hide();
-    event.preventDefault();
-  });
-});
-
 jQuery(document).ready(function($){
-  $(document).on('turbolinks:load', function() {
-    $("[data-js-toggle-topic]").click(function (event) {
-      console.log($("#"+ event.currentTarget.getAttribute("data-topic")))
-      $("." + event.currentTarget.getAttribute("data-topic")).toggle();    
+  $( document ).on('turbolinks:load', function() {
+      console.log("It works on each visit!")
+    })
 
-      if($("#"+ event.currentTarget.getAttribute("data-topic")).css('color')==='rgb(255, 165, 0)')
-      {
-        console.log($("#"+ event.currentTarget.getAttribute("data-topic")).css('color'))
-        console.log('if')
-        $("#"+ event.currentTarget.getAttribute("data-topic")).css({
-        'color':'rgb(0, 0, 0)'
-        })
-      }
-      else {
-        console.log('else')
-        $("#"+ event.currentTarget.getAttribute("data-topic")).css({
-          'color':'rgb(255, 165, 0)'
-        })
-      }   
-      console.log("hiding: ." + event.currentTarget.getAttribute("data-topic"));
+  $(document).on('turbolinks:load', function() {
+      $("#SelectedPosts").hide();
+    });
+
+  $(document).on('turbolinks:load', function() {
+    $("[data-js-hide-link]").click(function (event) {
+      $(this).parents("li").hide();
       event.preventDefault();
     });
   });
-});
 
-$(document).on('turbolinks:load', function() {
-  $("[data-js-selected-posts]").click(function (event) {
-    console.log("Selected Posts");
-    $("#SelectedPosts").show();
-    $("#RecentPosts").hide();
-    event.preventDefault();
+    $(document).on('turbolinks:load', function() {
+      $("[data-js-toggle-topic]").click(function (event) {
+        console.log($("#"+ event.currentTarget.getAttribute("data-topic")))
+        $("." + event.currentTarget.getAttribute("data-topic")).toggle();    
+
+        if($("#"+ event.currentTarget.getAttribute("data-topic")).css('color')==='rgb(255, 165, 0)')
+        {
+          console.log($("#"+ event.currentTarget.getAttribute("data-topic")).css('color'))
+          console.log('if')
+          $("#"+ event.currentTarget.getAttribute("data-topic")).css({
+          'color':'rgb(0, 0, 0)'
+          })
+        }
+        else {
+          console.log('else')
+          $("#"+ event.currentTarget.getAttribute("data-topic")).css({
+            'color':'rgb(255, 165, 0)'
+          })
+        }   
+        console.log("hiding: ." + event.currentTarget.getAttribute("data-topic"));
+        event.preventDefault();
+      });
+    });
+
+
+  $(document).on('turbolinks:load', function() {
+    $("[data-js-selected-posts]").click(function (event) {
+      console.log("Selected Posts");
+      $("#SelectedPosts").show();
+      $("#RecentPosts").hide();
+      event.preventDefault();
+    });
   });
-});
 
-$(document).on('turbolinks:load', function() {
-  $("[data-js-recent-posts]").click(function (event) {
-    console.log("Recent Posts");
-    $("#SelectedPosts").hide();
-    $("#RecentPosts").show();
-    event.preventDefault();
+  $(document).on('turbolinks:load', function() {
+    $("[data-js-recent-posts]").click(function (event) {
+      console.log("Recent Posts");
+      $("#SelectedPosts").hide();
+      $("#RecentPosts").show();
+      event.preventDefault();
+    });
   });
 });
