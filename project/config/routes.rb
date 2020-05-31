@@ -10,10 +10,10 @@ Rails.application.routes.draw do
   get 'login', to: 'sessions#new', as: 'login'
   get 'logout', to: 'sessions#destroy', as: 'logout'
   delete '/logout', to: 'sessions#destroy'
+  delete 'comments/:id(.:format)', :to => 'comments#destroy'
   
   resources :password_resets,   only: [:new, :create, :edit, :update]
   resources :articles do
     resources :comments
-
   end
 end

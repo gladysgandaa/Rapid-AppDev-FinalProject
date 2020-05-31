@@ -32,8 +32,14 @@
                   <div class="sub-title"> Recent Posts: </div>
                   <li>
                      <% @user.articles.each do |article| %>
-                     <%= article.text %>
+                     <%= article.title %>
                      <div class="article-time"><%= article.created_at.to_formatted_s(:long) %></div>
+                     <% if current_user.id == article.user_id %>
+                        <%= link_to 'Delete Article', article_path(article.id),
+                        method: :delete,
+                        data: { confirm: 'Are you sure?' } %>
+                        <%= link_to 'View article', article_path(article.id) %> 
+                     <% end %>
                      <hr>
                      <% end %>
                   </li>
@@ -51,11 +57,17 @@
                         %>
                      comment:
                      <div class="comment"> <%= comment.body %> </div>
+                     <% if current_user.id == comment.user_id %>
+                        <%= link_to 'Delete Comment', article_comment_path(comment.article_id,comment.id),
+                        method: :delete,
+                        data: { confirm: 'Are you sure?' } %>
+                        <%= link_to 'View article', article_path(comment.article_id) %> 
+                     <% end %>
                      <hr>
                      <% end %>
                   </li>
                </ul>
-               <%# <%= link_to 'View article', article_path(a.id) %> 
+               
             </div>
          </div>
       </div>
@@ -66,8 +78,14 @@
             <div class="sub-title"> Recent Posts: </div>
             <li>
                <% @user.articles.each do |article| %>
-               <%= article.text %>
+               <%= article.title %>
                <div class="article-time"><%= article.created_at.to_formatted_s(:long) %></div>
+               <% if current_user.id == article.user_id %>
+                  <%= link_to 'Delete Article', article_path(article.id),
+                        method: :delete,
+                        data: { confirm: 'Are you sure?' } %>
+                        <%= link_to 'View article', article_path(article.id) %> 
+               <% end %>
                <hr>
                <% end %>
             </li>
@@ -87,6 +105,12 @@
                   %>
                comment:
                <div class="comment"> <%= comment.body %> </div>
+               <% if current_user.id == comment.user_id %>
+                  <%= link_to 'Delete Comment', article_comment_path(comment.article_id,comment.id),
+                        method: :delete,
+                        data: { confirm: 'Are you sure?' } %>
+                        <%= link_to 'View article', article_path(comment.article_id) %> 
+               <% end %>
                <hr>
                <% end %>
             </li>
