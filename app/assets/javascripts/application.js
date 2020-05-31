@@ -16,7 +16,7 @@
 //= require articles
 //= require turbolinks
 //= require settings.js
-//= require_tree .
+
 
 $( document ).on('turbolinks:load', function() {
     console.log("It works on each visit!")
