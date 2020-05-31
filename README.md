@@ -120,7 +120,9 @@ Last heroku deployment log
 
 
 Gladys' Timesheet
+
 ![Gladys_Timesheet](https://github.com/s3679389/RAD2020_s3432636_s3679389/blob/submission/images/Gladys_Timesheet.JPG)
 
 Albert's Timesheet
+
 ![Albert_Timesheet](https://github.com/s3679389/RAD2020_s3432636_s3679389/blob/submission/images/Albert_Timesheet.JPG)
