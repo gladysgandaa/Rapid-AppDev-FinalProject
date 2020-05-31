@@ -1,13 +1,20 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  title: MyString
-  text: MyText
-  topic: MyString
-  user: MyString
+  title: 'A Seed Article'
+  text: 'This article is automatically seeded when you run the rails db:seed command'
+  topic: 'AI'
+  user_id: '1'
+  user: 'Bob'
+  viewcount: '0'
+  commentcount: '0'
 
 two:
-  title: MyString
-  text: MyText
-  topic: MyString
-  user: MyString
+  title: 'Virtual Reality is exciting.'
+  text: 'This is an article about virtual reality, which is fun.'
+  topic: 'VR'
+  user_id: '2'
+  user: 'Geoffrey'
+  viewcount: '0'
+  commentcount: '0'
+  
