@@ -100,6 +100,10 @@ button:hover{
   margin-left: 20px;
 }
 
+.user-username{
+  display: inline-block;
+}
+
 .user-icon{
   float: right !important;
   margin-top: 10px;
@@ -151,6 +155,46 @@ button:hover{
 
 .dropdown:hover .dropbtn {background-color: #3e8e41;}
 
+
+.news-dropbtn {
+  background-color: unset !important;
+  color: white;
+  padding: 21px;
+  border: none;
+  cursor: pointer;
+}
+
+.news-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.news-dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.news-dropdown-content li {
+  color: black;
+  padding: 12px 8px !important;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.news-dropdown-content a:hover {background-color: #f1f1f1}
+
+.news-dropdown:hover .news-dropdown-content {
+  display: block;
+}
+
+.news-dropdown:hover .news-dropbtn {
+  background-color: #3e8e41;
+}
 
 /* footer */
 
