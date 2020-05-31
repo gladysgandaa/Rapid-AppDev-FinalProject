@@ -7,9 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-user = User.create([{ username: 'Bob', email: 'bob@email.com', city: 'Melbourne', password: 'password123', password_confirmation: 'password123', mobile: '0490175046' }])
-user = User.create([{ username: 'Geoffrey', city: 'Michigan', email: 'geoffrey@email.com', password: 'password123', password_confirmation: 'password123', mobile: '0400000000' }])
-user = User.create([{ username: 'RAD', email: 'rad@email.com', city: 'Texas', password: 'Rails2020', password_confirmation: 'Rails2020', mobile: '0400123456' }])
+user = User.create([{ username: 'Bob', id: '1', email: 'bob@email.com', city: 'Melbourne', password: 'password123', password_confirmation: 'password123', mobile: '0490175046' }])
+user = User.create([{ username: 'Geoffrey', id: '2',city: 'Michigan', email: 'geoffrey@email.com', password: 'password123', password_confirmation: 'password123', mobile: '0400000000' }])
+user = User.create([{ username: 'RAD', id: '3', email: 'rad@email.com', city: 'Texas', password: 'Rails2020', password_confirmation: 'Rails2020', mobile: '0400123456' }])
 article = Article.create([{ title: 'A Seed Article', text: 'This article is automatically seeded when you run the rails db:seed command', topic: 'AI', user_id: '1', user: 'Bob', viewcount: '0', commentcount: '0'}])
 article = Article.create([{ title: 'Virtual Reality is exciting.', text: 'This is an article about virtual reality, which is fun.', topic: 'VR', user_id: '2', user: 'Geoffrey', viewcount: '0', commentcount: '0'}])
 article = Article.create([{ title: 'RMIT now has a Machine Learning club?', text: 'Does it? IDK', topic: 'ML', user_id: '1', user: 'Bob', viewcount: '0', commentcount: '0'}])
@@ -17,6 +17,6 @@ article = Article.create([{ title: 'This article is probably about RMIT', text: 
 article = Article.create([{ title: 'Ruby on Rails is the best', text: 'This article is automatically seeded when you run the rails db:seed command', topic: 'Rails', user_id: '2', user: 'Geoffrey', viewcount: '0', commentcount: '0'}])
 article = Article.create([{ title: 'An Old Article', text: 'This article is over a month old, and shouldnt appear in recent posts.', topic: 'Rails', user_id: '2', user: 'Geoffrey', viewcount: '0', commentcount: '0', created_at: '2020-03-17 08:07:44'}])
 article = Article.create([{ title: 'A News Article', text: 'This article is a NEWS article, and shouldnt appear in selected posts.', topic: '-', user_id: '2', user: 'Geoffrey', viewcount: '0', commentcount: '0'}])
-article = Article.create([{ title: 'Article by RAD2020', text: 'This is an article made by RAD2020', topic: 'Node', user_id: '3', user: 'RAD2020', viewcount: '0', commentcount: '0'}])
-article = Article.create([{ title: 'Article by RAD2020', text: 'This is a GO article made by RAD2020', topic: 'GO', user_id: '3', user: 'RAD2020', viewcount: '0', commentcount: '0'}])
-article = Article.create([{ title: 'Article by RAD2020', text: 'This article is about AWS made by RAD2020', topic: 'AWS', user_id: '3', user: 'RAD2020', viewcount: '0', commentcount: '0'}])
+article = Article.create([{ title: 'Article by RAD2020', text: 'This is an article made by RAD2020', topic: 'Node', user_id: '3', user: 'RAD', viewcount: '0', commentcount: '0'}])
+article = Article.create([{ title: 'Article by RAD2020', text: 'This is a GO article made by RAD2020', topic: 'GO', user_id: '3', user: 'RAD', viewcount: '0', commentcount: '0'}])
+article = Article.create([{ title: 'Article by RAD2020', text: 'This article is about AWS made by RAD2020', topic: 'AWS', user_id: '3', user: 'RAD', viewcount: '0', commentcount: '0'}])
