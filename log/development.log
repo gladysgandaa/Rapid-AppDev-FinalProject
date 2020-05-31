@@ -31602,3 +31602,340 @@ Processing by ArticlesController#index as HTML
 Completed 200 OK in 230ms (Views: 211.6ms | ActiveRecord: 5.6ms)
 
 
+Completed 304 Not Modified in 2ms (ActiveRecord: 0.0ms)
+
+
+=>"inline; filename=\"php.jpg\"; filename*=UTF-8''php.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRjVVpOZGpoTVpsWktOa00xUzFGeFZrTkJielpJVm01V0Jqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSTVhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGljR2h3TG1wd1p5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25jR2h3TG1wd1p3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lEMmx0WVdkbEwycHdaV2NHT3daVSIsImV4cCI6IjIwMjAtMDUtMzFUMDk6NTQ6NDUuMjQwWiIsInB1ciI6ImJsb2Jfa2V5In19--27fcbf846efffb09f3213b04a472a85989ddf380", "filename"=>"php"}
+g" for 10.0.2.2 at 2020-05-31 09:49:55 +0000
+:52 +0000
+cHVyIjoiYmxvYl9rZXkifX0=--64e22df723fa1902b98d158fe78ba1996ebced11", "filename"=>"cloud storage for firebase"}
+0firebase.png" for 10.0.2.2 at 2020-05-31 09:49:52 +0000
+2A%3DUTF-8%27%27cloud%2520storage%2520for%2520firebase.png)[0m
+                                                                                                                                                                      views/articles/index.html.erb:26
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/articles/index.html.erb:38
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:40
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:40
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:40
+  [1m[36mActiveStorage::Blob Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:40
+  [1m[36mActiveStorage::Attachment Load (1.0ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:40
+  [1m[36mActiveStorage::Blob Load (1.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:40
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" ORDER BY viewcount DESC LIMIT $1[0m  [["LIMIT", 5]]
+  ↳ app/views/articles/index.html.erb:134
+  Rendered articles/index.html.erb within layouts/application (195.2ms)
+  [1m[36mArticle Load (1.0ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" ORDER BY viewcount DESC LIMIT $1[0m  [["LIMIT", 2]]
+  ↳ app/views/layouts/_header.html.erb:14
+  [1m[36mCACHE ActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:34
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:34
+  Rendered layouts/_header.html.erb (11.8ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 935ms (Views: 871.9ms | ActiveRecord: 27.6ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--b70dec69474de6cadd7ae9d14406628efd8369a2/bob.png" for 10.0.2.2 at 2020-05-31 09:49:40 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--86e101e764ada39441c71810ecdd7e9da5ec6ff5/user.png" for 10.0.2.2 at 2020-05-31 09:49:40 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ActiveStorage::BlobsController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--b70dec69474de6cadd7ae9d14406628efd8369a2", "filename"=>"bob"}
+Processing by ActiveStorage::BlobsController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--86e101e764ada39441c71810ecdd7e9da5ec6ff5", "filename"=>"user"}
+  [1m[36mActiveStorage::Blob Load (3.7ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--362609478af312763183a04aa73178be5aa3ab97/cloud%20storage%20for%20firebase.png" for 10.0.2.2 at 2020-05-31 09:49:40 +0000
+  ↳ /home/vagrant/.rvm/gems/ruby-2.5.7/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveStorage::Blob Load (19.9ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rvm/gems/ruby-2.5.7/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+[36m  Disk Storage (16.8ms) [0m[34mGenerated URL for file at key: RoAezaAVGntyUmJvCqhfMzCR (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRVbTlCWlhwaFFWWkhiblI1VlcxS2RrTnhhR1pOZWtOU0Jqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSTVhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlZbTlpTG5CdVp5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25ZbTlpTG5CdVp3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lEbWx0WVdkbEwzQnVad1k3QmxRPSIsImV4cCI6IjIwMjAtMDUtMzFUMDk6NTQ6NDAuMjc0WiIsInB1ciI6ImJsb2Jfa2V5In19--ddc05e75e5acaadec1826cdb664b6dfd93a83371/bob.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22bob.png%22%3B+filename%2A%3DUTF-8%27%27bob.png)[0m
+[36m  Disk Storage (2.2ms) [0m[34mGenerated URL for file at key: n2XCrq359GMpAB2jSkJoCkr4 (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRiakpZUTNKeE16VTVSMDF3UVVJeWFsTnJTbTlEYTNJMEJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSTdhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlkWE5sY2k1d2JtY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KM1Z6WlhJdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZBPT0iLCJleHAiOiIyMDIwLTA1LTMxVDA5OjU0OjQwLjI3OFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--a8ca1568eda2a8b90c1ee1e2e34a8ef0987b5756/user.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22user.png%22%3B+filename%2A%3DUTF-8%27%27user.png)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRVbTlCWlhwaFFWWkhiblI1VlcxS2RrTnhhR1pOZWtOU0Jqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSTVhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlZbTlpTG5CdVp5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25ZbTlpTG5CdVp3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lEbWx0WVdkbEwzQnVad1k3QmxRPSIsImV4cCI6IjIwMjAtMDUtMzFUMDk6NTQ6NDAuMjc0WiIsInB1ciI6ImJsb2Jfa2V5In19--ddc05e75e5acaadec1826cdb664b6dfd93a83371/bob.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22bob.png%22%3B+filename%2A%3DUTF-8%27%27bob.png
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRiakpZUTNKeE16VTVSMDF3UVVJeWFsTnJTbTlEYTNJMEJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSTdhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlkWE5sY2k1d2JtY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KM1Z6WlhJdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZBPT0iLCJleHAiOiIyMDIwLTA1LTMxVDA5OjU0OjQwLjI3OFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--a8ca1568eda2a8b90c1ee1e2e34a8ef0987b5756/user.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22user.png%22%3B+filename%2A%3DUTF-8%27%27user.png
+Completed 302 Found in 36ms (ActiveRecord: 19.9ms)
+
+
+Completed 302 Found in 49ms (ActiveRecord: 4.0ms)
+
+
+Processing by ActiveStorage::BlobsController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--362609478af312763183a04aa73178be5aa3ab97", "filename"=>"cloud storage for firebase"}
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rvm/gems/ruby-2.5.7/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+[36m  Disk Storage (1.3ms) [0m[34mGenerated URL for file at key: XFN9xGy2Mjct3ygqChn9ALRA (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRXRVpPT1hoSGVUSk5hbU4wTTNsbmNVTm9iamxCVEZKQkJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSnRhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlZMnh2ZFdRZ2MzUnZjbUZuWlNCbWIzSWdabWx5WldKaGMyVXVjRzVuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0SnlkamJHOTFaQ1V5TUhOMGIzSmhaMlVsTWpCbWIzSWxNakJtYVhKbFltRnpaUzV3Ym1jR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnNXBiV0ZuWlM5d2JtY0dPd1pVIiwiZXhwIjoiMjAyMC0wNS0zMVQwOTo1NDo0MC4zMTVaIiwicHVyIjoiYmxvYl9rZXkifX0=--64e22df723fa1902b98d158fe78ba1996ebced11/cloud%20storage%20for%20firebase.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22cloud+storage+for+firebase.png%22%3B+filename%2A%3DUTF-8%27%27cloud%2520storage%2520for%2520firebase.png)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRXRVpPT1hoSGVUSk5hbU4wTTNsbmNVTm9iamxCVEZKQkJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSnRhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlZMnh2ZFdRZ2MzUnZjbUZuWlNCbWIzSWdabWx5WldKaGMyVXVjRzVuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0SnlkamJHOTFaQ1V5TUhOMGIzSmhaMlVsTWpCbWIzSWxNakJtYVhKbFltRnpaUzV3Ym1jR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnNXBiV0ZuWlM5d2JtY0dPd1pVIiwiZXhwIjoiMjAyMC0wNS0zMVQwOTo1NDo0MC4zMTVaIiwicHVyIjoiYmxvYl9rZXkifX0=--64e22df723fa1902b98d158fe78ba1996ebced11/cloud%20storage%20for%20firebase.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22cloud+storage+for+firebase.png%22%3B+filename%2A%3DUTF-8%27%27cloud%2520storage%2520for%2520firebase.png
+Completed 302 Found in 12ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRiakpZUTNKeE16VTVSMDF3UVVJeWFsTnJTbTlEYTNJMEJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSTdhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlkWE5sY2k1d2JtY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KM1Z6WlhJdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZBPT0iLCJleHAiOiIyMDIwLTA1LTMxVDA5OjU0OjQwLjI3OFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--a8ca1568eda2a8b90c1ee1e2e34a8ef0987b5756/user.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22user.png%22%3B+filename%2A%3DUTF-8%27%27user.png" for 10.0.2.2 at 2020-05-31 09:49:40 +0000
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRVbTlCWlhwaFFWWkhiblI1VlcxS2RrTnhhR1pOZWtOU0Jqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSTVhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlZbTlpTG5CdVp5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25ZbTlpTG5CdVp3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lEbWx0WVdkbEwzQnVad1k3QmxRPSIsImV4cCI6IjIwMjAtMDUtMzFUMDk6NTQ6NDAuMjc0WiIsInB1ciI6ImJsb2Jfa2V5In19--ddc05e75e5acaadec1826cdb664b6dfd93a83371/bob.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22bob.png%22%3B+filename%2A%3DUTF-8%27%27bob.png" for 10.0.2.2 at 2020-05-31 09:49:40 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRXRVpPT1hoSGVUSk5hbU4wTTNsbmNVTm9iamxCVEZKQkJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSnRhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlZMnh2ZFdRZ2MzUnZjbUZuWlNCbWIzSWdabWx5WldKaGMyVXVjRzVuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0SnlkamJHOTFaQ1V5TUhOMGIzSmhaMlVsTWpCbWIzSWxNakJtYVhKbFltRnpaUzV3Ym1jR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnNXBiV0ZuWlM5d2JtY0dPd1pVIiwiZXhwIjoiMjAyMC0wNS0zMVQwOTo1NDo0MC4zMTVaIiwicHVyIjoiYmxvYl9rZXkifX0=--64e22df723fa1902b98d158fe78ba1996ebced11/cloud%20storage%20for%20firebase.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22cloud+storage+for+firebase.png%22%3B+filename%2A%3DUTF-8%27%27cloud%2520storage%2520for%2520firebase.png" for 10.0.2.2 at 2020-05-31 09:49:40 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ActiveStorage::DiskController#show as PNG
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"content_type"=>"image/png", "disposition"=>"inline; filename=\"bob.png\"; filename*=UTF-8''bob.png", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRVbTlCWlhwaFFWWkhiblI1VlcxS2RrTnhhR1pOZWtOU0Jqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSTVhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlZbTlpTG5CdVp5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25ZbTlpTG5CdVp3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lEbWx0WVdkbEwzQnVad1k3QmxRPSIsImV4cCI6IjIwMjAtMDUtMzFUMDk6NTQ6NDAuMjc0WiIsInB1ciI6ImJsb2Jfa2V5In19--ddc05e75e5acaadec1826cdb664b6dfd93a83371", "filename"=>"bob"}
+  Parameters: {"content_type"=>"image/png", "disposition"=>"inline; filename=\"user.png\"; filename*=UTF-8''user.png", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRiakpZUTNKeE16VTVSMDF3UVVJeWFsTnJTbTlEYTNJMEJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSTdhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlkWE5sY2k1d2JtY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KM1Z6WlhJdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZBPT0iLCJleHAiOiIyMDIwLTA1LTMxVDA5OjU0OjQwLjI3OFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--a8ca1568eda2a8b90c1ee1e2e34a8ef0987b5756", "filename"=>"user"}
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"content_type"=>"image/png", "disposition"=>"inline; filename=\"cloud storage for firebase.png\"; filename*=UTF-8''cloud%20storage%20for%20firebase.png", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRXRVpPT1hoSGVUSk5hbU4wTTNsbmNVTm9iamxCVEZKQkJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSnRhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlZMnh2ZFdRZ2MzUnZjbUZuWlNCbWIzSWdabWx5WldKaGMyVXVjRzVuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0SnlkamJHOTFaQ1V5TUhOMGIzSmhaMlVsTWpCbWIzSWxNakJtYVhKbFltRnpaUzV3Ym1jR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnNXBiV0ZuWlM5d2JtY0dPd1pVIiwiZXhwIjoiMjAyMC0wNS0zMVQwOTo1NDo0MC4zMTVaIiwicHVyIjoiYmxvYl9rZXkifX0=--64e22df723fa1902b98d158fe78ba1996ebced11", "filename"=>"cloud storage for firebase"}
+Completed 200 OK in 5ms (ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 29ms (ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 21ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/3/edit" for 10.0.2.2 at 2020-05-31 09:49:44 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:69
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:23
+  Rendering users/edit.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/views/users/edit.html.erb:14
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/edit.html.erb:14
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."user_id" = $1[0m  [["user_id", 3]]
+  ↳ app/views/users/edit.html.erb:34
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "LSc8dCJt6YXHYS1wLXJX3g"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 3]]
+  ↳ app/views/users/edit.html.erb:52
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/edit.html.erb:55
+  [1m[36mCACHE Article Load (0.0ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/edit.html.erb:103
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = $1[0m  [["article_id", 8]]
+  ↳ app/views/users/edit.html.erb:127
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = $1[0m  [["article_id", 9]]
+  ↳ app/views/users/edit.html.erb:127
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = $1[0m  [["article_id", 10]]
+  ↳ app/views/users/edit.html.erb:127
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "User"], ["name", "studentid"], ["LIMIT", 1]]
+  ↳ app/views/users/edit.html.erb:221
+  [1m[36mActiveStorage::Blob Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/users/edit.html.erb:221
+  Rendered users/edit.html.erb within layouts/application (114.4ms)
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" ORDER BY viewcount DESC LIMIT $1[0m  [["LIMIT", 2]]
+  ↳ app/views/layouts/_header.html.erb:14
+  [1m[36mCACHE ActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:34
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:34
+  Rendered layouts/_header.html.erb (11.4ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 265ms (Views: 233.9ms | ActiveRecord: 12.7ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--aa398d46cfcff10e9b95f04fc7bec31b1d474625/php.jpg" for 10.0.2.2 at 2020-05-31 09:49:45 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--aa398d46cfcff10e9b95f04fc7bec31b1d474625", "filename"=>"php"}
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rvm/gems/ruby-2.5.7/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+[36m  Disk Storage (0.7ms) [0m[34mGenerated URL for file at key: qFMv8LfVJ6C5KQqVCAo6HVnV (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRjVVpOZGpoTVpsWktOa00xUzFGeFZrTkJielpJVm01V0Jqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSTVhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGljR2h3TG1wd1p5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25jR2h3TG1wd1p3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lEMmx0WVdkbEwycHdaV2NHT3daVSIsImV4cCI6IjIwMjAtMDUtMzFUMDk6NTQ6NDUuMjQwWiIsInB1ciI6ImJsb2Jfa2V5In19--27fcbf846efffb09f3213b04a472a85989ddf380/php.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22php.jpg%22%3B+filename%2A%3DUTF-8%27%27php.jpg)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRjVVpOZGpoTVpsWktOa00xUzFGeFZrTkJielpJVm01V0Jqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSTVhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGljR2h3TG1wd1p5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25jR2h3TG1wd1p3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lEMmx0WVdkbEwycHdaV2NHT3daVSIsImV4cCI6IjIwMjAtMDUtMzFUMDk6NTQ6NDUuMjQwWiIsInB1ciI6ImJsb2Jfa2V5In19--27fcbf846efffb09f3213b04a472a85989ddf380/php.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22php.jpg%22%3B+filename%2A%3DUTF-8%27%27php.jpg
+Completed 302 Found in 7ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRjVVpOZGpoTVpsWktOa00xUzFGeFZrTkJielpJVm01V0Jqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSTVhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGljR2h3TG1wd1p5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25jR2h3TG1wd1p3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lEMmx0WVdkbEwycHdaV2NHT3daVSIsImV4cCI6IjIwMjAtMDUtMzFUMDk6NTQ6NDUuMjQwWiIsInB1ciI6ImJsb2Jfa2V5In19--27fcbf846efffb09f3213b04a472a85989ddf380/php.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22php.jpg%22%3B+filename%2A%3DUTF-8%27%27php.jpg" for 10.0.2.2 at 2020-05-31 09:49:45 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"php.jpg\"; filename*=UTF-8''php.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRjVVpOZGpoTVpsWktOa00xUzFGeFZrTkJielpJVm01V0Jqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSTVhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGljR2h3TG1wd1p5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25jR2h3TG1wd1p3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lEMmx0WVdkbEwycHdaV2NHT3daVSIsImV4cCI6IjIwMjAtMDUtMzFUMDk6NTQ6NDUuMjQwWiIsInB1ciI6ImJsb2Jfa2V5In19--27fcbf846efffb09f3213b04a472a85989ddf380", "filename"=>"php"}
+Completed 200 OK in 2ms (ActiveRecord: 0.0ms)
+
+
+Started DELETE "/articles/1/comments/2" for 10.0.2.2 at 2020-05-31 09:49:51 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CommentsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"feqD17FDCJoeNnRu11y6It7ZO6husETvEhCaO7CQQhhC0yC4zH/sMdGG8mhJCjh2toXGLCaikcK4bdG7COJspw==", "article_id"=>"1", "id"=>"2"}
+  [1m[36mArticle Load (0.7ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:33
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/comments_controller.rb:35
+  [1m[36mArticle Update (0.5ms)[0m  [1m[33mUPDATE "articles" SET "commentcount" = $1, "updated_at" = $2 WHERE "articles"."id" = $3[0m  [["commentcount", 0], ["updated_at", "2020-05-31 09:49:51.700359"], ["id", 1]]
+  ↳ app/controllers/comments_controller.rb:35
+  [1m[35m (22.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/comments_controller.rb:35
+  [1m[36mComment Load (24.2ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:36
+  [1m[36mComment Destroy (1.0ms)[0m  [1m[31mDELETE FROM "comments" WHERE "comments"."id" = $1[0m  [["id", 2]]
+  ↳ app/controllers/comments_controller.rb:37
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/comments_controller.rb:38
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:38
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:38
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/comments_controller.rb:38
+Redirected to http://localhost:3000/articles/1
+Completed 302 Found in 85ms (ActiveRecord: 52.0ms)
+
+
+Started GET "/articles/1" for 10.0.2.2 at 2020-05-31 09:49:51 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:15
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT DISTINCT "articles"."topic" FROM "articles"[0m
+  ↳ app/controllers/articles_controller.rb:17
+  Rendering articles/show.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/views/articles/show.html.erb:24
+  [1m[36mArticle Update (0.5ms)[0m  [1m[33mUPDATE "articles" SET "viewcount" = $1, "updated_at" = $2 WHERE "articles"."id" = $3[0m  [["viewcount", 5], ["updated_at", "2020-05-31 09:49:51.822731"], ["id", 1]]
+  ↳ app/views/articles/show.html.erb:24
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/views/articles/show.html.erb:24
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/articles/show.html.erb:28
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:30
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:30
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "LSc8dCJt6YXHYS1wLXJX3g"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = $1[0m  [["article_id", 1]]
+  ↳ app/views/articles/show.html.erb:67
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:101
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:101
+  [1m[36mActiveStorage::Attachment Load (0.8ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:101
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:101
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" ORDER BY viewcount DESC LIMIT $1[0m  [["LIMIT", 5]]
+  ↳ app/views/articles/show.html.erb:124
+  Rendered articles/show.html.erb within layouts/application (57.0ms)
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" ORDER BY viewcount DESC LIMIT $1[0m  [["LIMIT", 2]]
+  ↳ app/views/layouts/_header.html.erb:14
+  [1m[36mCACHE ActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:34
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:34
+  Rendered layouts/_header.html.erb (12.7ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 218ms (Views: 196.6ms | ActiveRecord: 8.8ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRXRVpPT1hoSGVUSk5hbU4wTTNsbmNVTm9iamxCVEZKQkJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSnRhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlZMnh2ZFdRZ2MzUnZjbUZuWlNCbWIzSWdabWx5WldKaGMyVXVjRzVuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0SnlkamJHOTFaQ1V5TUhOMGIzSmhaMlVsTWpCbWIzSWxNakJtYVhKbFltRnpaUzV3Ym1jR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnNXBiV0ZuWlM5d2JtY0dPd1pVIiwiZXhwIjoiMjAyMC0wNS0zMVQwOTo1NDo0MC4zMTVaIiwicHVyIjoiYmxvYl9rZXkifX0=--64e22df723fa1902b98d158fe78ba1996ebced11/cloud%20storage%20for%20firebase.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22cloud+storage+for+firebase.png%22%3B+filename%2A%3DUTF-8%27%27cloud%2520storage%2520for%2520firebase.png" for 10.0.2.2 at 2020-05-31 09:49:52 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRVbTlCWlhwaFFWWkhiblI1VlcxS2RrTnhhR1pOZWtOU0Jqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSTVhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlZbTlpTG5CdVp5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25ZbTlpTG5CdVp3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lEbWx0WVdkbEwzQnVad1k3QmxRPSIsImV4cCI6IjIwMjAtMDUtMzFUMDk6NTQ6NDAuMjc0WiIsInB1ciI6ImJsb2Jfa2V5In19--ddc05e75e5acaadec1826cdb664b6dfd93a83371/bob.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22bob.png%22%3B+filename%2A%3DUTF-8%27%27bob.png" for 10.0.2.2 at 2020-05-31 09:49:52 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"content_type"=>"image/png", "disposition"=>"inline; filename=\"bob.png\"; filename*=UTF-8''bob.png", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRVbTlCWlhwaFFWWkhiblI1VlcxS2RrTnhhR1pOZWtOU0Jqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSTVhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlZbTlpTG5CdVp5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25ZbTlpTG5CdVp3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lEbWx0WVdkbEwzQnVad1k3QmxRPSIsImV4cCI6IjIwMjAtMDUtMzFUMDk6NTQ6NDAuMjc0WiIsInB1ciI6ImJsb2Jfa2V5In19--ddc05e75e5acaadec1826cdb664b6dfd93a83371", "filename"=>"bob"}
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"content_type"=>"image/png", "disposition"=>"inline; filename=\"cloud storage for firebase.png\"; filename*=UTF-8''cloud%20storage%20for%20firebase.png", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRXRVpPT1hoSGVUSk5hbU4wTTNsbmNVTm9iamxCVEZKQkJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSnRhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlZMnh2ZFdRZ2MzUnZjbUZuWlNCbWIzSWdabWx5WldKaGMyVXVjRzVuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0SnlkamJHOTFaQ1V5TUhOMGIzSmhaMlVsTWpCbWIzSWxNakJtYVhKbFltRnpaUzV3Ym1jR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnNXBiV0ZuWlM5d2JtY0dPd1pVIiwiZXhwIjoiMjAyMC0wNS0zMVQwOTo1NDo0MC4zMTVaIiwicHVyIjoiYmxvYl9rZXkifX0=--64e22df723fa1902b98d158fe78ba1996ebced11", "filename"=>"cloud storage for firebase"}
+Completed 304 Not Modified in 4ms (ActiveRecord: 0.0ms)
+
+
+Completed 304 Not Modified in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRiakpZUTNKeE16VTVSMDF3UVVJeWFsTnJTbTlEYTNJMEJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSTdhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlkWE5sY2k1d2JtY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KM1Z6WlhJdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZBPT0iLCJleHAiOiIyMDIwLTA1LTMxVDA5OjU0OjQwLjI3OFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--a8ca1568eda2a8b90c1ee1e2e34a8ef0987b5756/user.png?content_type=image%2Fpng&disposition=inline%3B+filename%3D%22user.png%22%3B+filename%2A%3DUTF-8%27%27user.png" for 10.0.2.2 at 2020-05-31 09:49:52 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"content_type"=>"image/png", "disposition"=>"inline; filename=\"user.png\"; filename*=UTF-8''user.png", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRiakpZUTNKeE16VTVSMDF3UVVJeWFsTnJTbTlEYTNJMEJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSTdhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlkWE5sY2k1d2JtY2lPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KM1Z6WlhJdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZBPT0iLCJleHAiOiIyMDIwLTA1LTMxVDA5OjU0OjQwLjI3OFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--a8ca1568eda2a8b90c1ee1e2e34a8ef0987b5756", "filename"=>"user"}
+Completed 304 Not Modified in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/articles" for 10.0.2.2 at 2020-05-31 09:49:53 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#index as HTML
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT DISTINCT "articles"."topic" FROM "articles"[0m
+  ↳ app/controllers/articles_controller.rb:11
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "LSc8dCJt6YXHYS1wLXJX3g"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mArticle Load (0.7ms)[0m  [1m[34mSELECT "articles".* FROM "articles" ORDER BY created_at DESC[0m
+  ↳ app/views/articles/index.html.erb:26
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/articles/index.html.erb:38
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:40
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:40
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:40
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:40
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:40
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:40
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" ORDER BY viewcount DESC LIMIT $1[0m  [["LIMIT", 5]]
+  ↳ app/views/articles/index.html.erb:134
+  Rendered articles/index.html.erb within layouts/application (65.2ms)
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" ORDER BY viewcount DESC LIMIT $1[0m  [["LIMIT", 2]]
+  ↳ app/views/layouts/_header.html.erb:14
+  [1m[36mCACHE ActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:34
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:34
+  Rendered layouts/_header.html.erb (11.6ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 211ms (Views: 193.5ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/users/3/edit" for 10.0.2.2 at 2020-05-31 09:49:55 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:69
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:23
+  Rendering users/edit.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/views/users/edit.html.erb:14
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/edit.html.erb:14
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."user_id" = $1[0m  [["user_id", 3]]
+  ↳ app/views/users/edit.html.erb:34
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1 LIMIT $2[0m  [["remember_token", "LSc8dCJt6YXHYS1wLXJX3g"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 3]]
+  ↳ app/views/users/edit.html.erb:52
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = $1[0m  [["article_id", 8]]
+  ↳ app/views/users/edit.html.erb:127
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = $1[0m  [["article_id", 9]]
+  ↳ app/views/users/edit.html.erb:127
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = $1[0m  [["article_id", 10]]
+  ↳ app/views/users/edit.html.erb:127
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "User"], ["name", "studentid"], ["LIMIT", 1]]
+  ↳ app/views/users/edit.html.erb:221
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/users/edit.html.erb:221
+  Rendered users/edit.html.erb within layouts/application (51.6ms)
+  [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" ORDER BY viewcount DESC LIMIT $1[0m  [["LIMIT", 2]]
+  ↳ app/views/layouts/_header.html.erb:14
+  [1m[36mCACHE ActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:34
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:34
+  Rendered layouts/_header.html.erb (14.4ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 213ms (Views: 195.1ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRjVVpOZGpoTVpsWktOa00xUzFGeFZrTkJielpJVm01V0Jqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSTVhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGljR2h3TG1wd1p5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25jR2h3TG1wd1p3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lEMmx0WVdkbEwycHdaV2NHT3daVSIsImV4cCI6IjIwMjAtMDUtMzFUMDk6NTQ6NDUuMjQwWiIsInB1ciI6ImJsb2Jfa2V5In19--27fcbf846efffb09f3213b04a472a85989ddf380/php.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22php.jpg%22%3B+filename%2A%3DUTF-8%27%27php.jpg" for 10.0.2.2 at 2020-05-31 09:49:55 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"php.jpg\"; filename*=UTF-8''php.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRjVVpOZGpoTVpsWktOa00xUzFGeFZrTkJielpJVm01V0Jqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSTVhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGljR2h3TG1wd1p5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25jR2h3TG1wd1p3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lEMmx0WVdkbEwycHdaV2NHT3daVSIsImV4cCI6IjIwMjAtMDUtMzFUMDk6NTQ6NDUuMjQwWiIsInB1ciI6ImJsb2Jfa2V5In19--27fcbf846efffb09f3213b04a472a85989ddf380", "filename"=>"php"}
+Completed 304 Not Modified in 2ms (ActiveRecord: 0.0ms)
+
+

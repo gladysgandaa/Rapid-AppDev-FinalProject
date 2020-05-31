@@ -16,10 +16,26 @@ class CommentsController < ApplicationController
       end
 
       def delete
+        puts(params[:article_id])
+        puts(params[:id])
         @article = Article.find(params[:article_id])
         @article.commentcount = @article.commentcount - 1
         @article.save
+        @comment = Comment.find(params[:id])
         @comment.delete
+        @comment.save
+        redirect_to article_path(@article)
+      end
+
+      def destroy
+        puts(params[:article_id])
+        puts(params[:id])
+        @article = Article.find(params[:article_id])
+        @article.commentcount = @article.commentcount - 1
+        @article.save
+        @comment = Comment.find(params[:id])
+        @comment.delete
+        @comment.save
         redirect_to article_path(@article)
       end
      

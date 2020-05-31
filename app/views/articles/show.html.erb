@@ -26,20 +26,26 @@
                </div>
                <div class="article-user">
                   <% @users.each do |user| %>
-                  <% if user.id == @article.user_id %>
-                  <% if user.avatar.attached? %>
-                  <%= image_tag(user.avatar) %>
-                  <% else %>
-                  <img class="dropbtn" src="https://cdn3.f-cdn.com/contestentries/1376995/30494909/5b566bc71d308_thumb900.jpg"
-                     alt="Flowers in Chania" href="">
-                  <% end %>
-                  <% end %>
+                     <% if user.id == @article.user_id %>
+                        <% if user.avatar.attached? %>
+                           <%= image_tag(user.avatar) %>
+                        <% else %>
+                           <img class="dropbtn" src="https://cdn3.f-cdn.com/contestentries/1376995/30494909/5b566bc71d308_thumb900.jpg"
+                              alt="Flowers in Chania" href="">
+                        <% end %>
+                     <% end %>
                   <% end %>
                   <strong><%= link_to @article.user, user_path(@article.user_id) %></strong>
                </div>
                <div class="article-text">
                   <%= @article.text %>
                </div>
+               <% if current_user.id == @article.user_id %>
+               <%= link_to 'Delete Article', article_path(@article.id),
+                     method: :delete,
+                     data: { confirm: 'Are you sure?' } %>
+                     <%= link_to 'View article', article_path(@article.id) %> 
+            <% end %>
                <% if current_user %>
                <h4>Comments</h4>
                <hr>
@@ -54,25 +60,32 @@
                <% else %>
                <h2>Sign in to add a comment</h2>
                <% end %>
+
                <div class="comment-section">
                   <div class="comments-count"><%= @article.commentcount %> Comments </div>
                   <br>
                   <% @article.comments.each do |comment| %>
-                  <div class="single-comment">
-                  <% @users.each do |user| %>
-                  <% if user.username == comment.commenter %>
-                  <% if user.avatar.attached? %>
-                  <%= image_tag(user.avatar) %>
-                  <% else %>
-                  <img class="dropbtn" src="https://cdn3.f-cdn.com/contestentries/1376995/30494909/5b566bc71d308_thumb900.jpg"
-                     alt="Flowers in Chania" href="">
+                     <div class="single-comment">
+                     <% @users.each do |user| %>
+                        <% if user.username == comment.commenter %>
+                           <% if user.avatar.attached? %>
+                              <%= image_tag(user.avatar) %>
+                           <% else %>
+                           <img class="dropbtn" src="https://cdn3.f-cdn.com/contestentries/1376995/30494909/5b566bc71d308_thumb900.jpg"
+                              alt="Flowers in Chania" href="">
+                           <% end %>
+                        <% end %>
+                     <% end %>
+                     <div class=" comment-user"><%= comment.commenter %></div>
+                     <%# <div class="comment-date"> <%= comment.created_at.to_formatted_s(:long) </div>  %>
+                     <div class="comment-content"><%= comment.body %></div>
+                     </div>
+                     <% if current_user.id == comment.user_id %>
+                     <%= link_to 'Delete Comment', article_comment_path(comment.article_id,comment.id),
+                           method: :delete,
+                           data: { confirm: 'Are you sure?' } %>        
                   <% end %>
-                  <% end %>
-                  <% end %>
-                  <div class=" comment-user"><%= comment.commenter %></div>
-                  <%# <div class="comment-date"> <%= comment.created_at.to_formatted_s(:long) </div>  %>
-                  <div class="comment-content"><%= comment.body %></div>
-                  </div>
+                     
                   <% end %>
                </div>
             </div>
